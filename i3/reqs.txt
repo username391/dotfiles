@@ -16,6 +16,9 @@ scrot
 xclip
 dunst
 lxappearance
+ripgrep
+github-cli
+git
 
 libinput
 udisks2
