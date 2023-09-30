@@ -1,0 +1,31 @@
+
+# yay
+xkblayout-state
+xkb-switch
+yt-dlp
+
+
+# pacman
+feh
+picom
+scrot
+xclip
+dunst
+
+libinput
+udisks2
+ntfs-3g # for ntfs support
+alsa-plugins
+pulseaudio-alsa
+pulseaudio-bluetooth
+bluez-utils
+# systemctl enable bluetooth.service
+# bluetooth
+# $ power on
+# $ agent on
+# $ default-agent
+# $ scan on
+# $ pair {id}
+# $ connect {id}
+# $ disconnect {id}
+# $ scan off
