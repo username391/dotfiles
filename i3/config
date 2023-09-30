@@ -179,11 +179,11 @@ bindsym $mod+$alt+Shift+minus gaps inner current minus 5
 #   i3-msg "gaps inner current minus 5"
 
 # screenshots
-bindsym	$mod+Print exec $HOME/scripts/take_sceenshot.sh
-bindsym	Print exec $HOME/scripts/take_sceenshot.sh --clipboard
+bindsym	$mod+Print --no-startup-id exec $HOME/scripts/take_sceenshot.sh
+bindsym	Print --no-startup-id exec $HOME/scripts/take_sceenshot.sh --clipboard
 
 # change wallpaper
-bindsym $mod+u exec $HOME/scripts/set_random_wallpaper.sh $HOME/wallpapers
+bindsym $mod+u --no-startup-id exec $HOME/scripts/set_random_wallpaper.sh $HOME/wallpapers
 
 
 
