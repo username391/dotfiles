@@ -19,9 +19,9 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id exec $HOME/scripts/volume.sh inc
-bindsym XF86AudioLowerVolume exec --no-startup-id exec $HOME/scripts/volume.sh dec
-bindsym XF86AudioMute exec --no-startup-id exec $HOME/scripts/volume.sh mute
+bindsym XF86AudioRaiseVolume exec exec --no-startup-id $HOME/scripts/volume.sh inc
+bindsym XF86AudioLowerVolume exec exec --no-startup-id $HOME/scripts/volume.sh dec
+bindsym XF86AudioMute exec exec --no-startup-id $HOME/scripts/volume.sh mute
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -179,11 +179,11 @@ bindsym $mod+$alt+Shift+minus gaps inner current minus 5
 #   i3-msg "gaps inner current minus 5"
 
 # screenshots
-bindsym	$mod+Print --no-startup-id exec $HOME/scripts/take_sceenshot.sh
-bindsym	Print --no-startup-id exec $HOME/scripts/take_sceenshot.sh --clipboard
+bindsym	$mod+Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh
+bindsym	Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh --clipboard
 
 # change wallpaper
-bindsym $mod+u --no-startup-id exec $HOME/scripts/set_random_wallpaper.sh $HOME/wallpapers
+bindsym $mod+u exec --no-startup-id $HOME/scripts/set_random_wallpaper.sh $HOME/wallpapers
 
 
 
