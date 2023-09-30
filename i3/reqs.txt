@@ -11,6 +11,7 @@ picom
 scrot
 xclip
 dunst
+lxappearance
 
 libinput
 udisks2
