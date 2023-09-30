@@ -6,6 +6,10 @@ yt-dlp
 
 
 # pacman
+qutebrowser
+alacritty
+xcursor-themes
+keepassxc
 feh
 picom
 scrot
