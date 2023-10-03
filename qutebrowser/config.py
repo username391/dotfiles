@@ -21,7 +21,7 @@ config.set("colors.webpage.darkmode.enabled", True)
 
 config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
 config.set('content.cookies.accept', 'all', 'devtools://*')
-
+config.set("content.javascript.clipboard", "access")
 
 c.url.searchengines = {
     "DEFAULT": "https://www.google.com/search?q={}",
@@ -130,4 +130,6 @@ config.bind("xM", "spawn mpv {url}")
 config.bind("xb", "config-cycle statusbar.show always never")
 config.bind("xt", "config-cycle tabs.show always never")
 config.bind("xx", "config-cycle statusbar.show always never;;config-cycle tabs.show always never")
+
+config.bind("xD", "hint links spawn python /home/me/pro/download.py {hint-url}")
 
