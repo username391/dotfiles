@@ -182,6 +182,8 @@ bindsym $mod+$alt+Shift+minus gaps inner current minus 5
 # screenshots
 bindsym	$mod+Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh
 bindsym	Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh --clipboard
+bindsym	$mod+Shift+Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh --area
+bindsym	Shift+Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh --clipboard --area
 
 # change wallpaper
 bindsym $mod+u exec --no-startup-id $HOME/scripts/set_random_wallpaper.sh $HOME/wallpapers
