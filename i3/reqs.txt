@@ -3,6 +3,7 @@
 xkblayout-state
 xkb-switch
 yt-dlp
+networkmanager-dmenu-git
 
 
 # pacman
