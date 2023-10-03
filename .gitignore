@@ -1,5 +1,7 @@
 pavucontrol.ini
 QtProject.conf
+kritadisplayrc
+kritarc
 
 pulse/
 nvim/
@@ -11,3 +13,4 @@ xfce4/
 obsidian/
 dconf/
 libreoffice/
+Pinta/
