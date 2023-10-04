@@ -20,6 +20,8 @@ lxappearance
 ripgrep
 github-cli
 git
+exa
+man-db
 
 libinput
 udisks2
