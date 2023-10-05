@@ -2,6 +2,8 @@ pavucontrol.ini
 QtProject.conf
 kritadisplayrc
 kritarc
+qutebrowser/quickmarks
+qutebrowser/autoconfig.yml
 
 pulse/
 nvim/
