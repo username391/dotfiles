@@ -18,6 +18,8 @@ c.aliases = {'q': 'quit', 'w': 'session-save', 'wq': 'quit --save'}
 
 # Setting dark mode
 config.set("colors.webpage.darkmode.enabled", True)
+# hide tabs if there is only one
+config.set("tabs.show", "multiple")
 
 config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
 config.set('content.cookies.accept', 'all', 'devtools://*')
@@ -128,8 +130,8 @@ c.fonts.statusbar = '11pt "Source Code Pro"'
 config.bind("M", "hint links spawn mpv {hint-url}")
 config.bind("xM", "spawn mpv {url}")
 config.bind("xb", "config-cycle statusbar.show always never")
-config.bind("xt", "config-cycle tabs.show always never")
-config.bind("xx", "config-cycle statusbar.show always never;;config-cycle tabs.show always never")
+config.bind("xt", "config-cycle tabs.show multiple never")
+config.bind("xx", "config-cycle statusbar.show always never;;config-cycle tabs.show multiple never")
 
 config.bind("xD", "hint links spawn python /home/me/pro/download.py {hint-url}")
 
