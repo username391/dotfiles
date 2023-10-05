@@ -22,6 +22,7 @@ github-cli
 git
 exa
 man-db
+imagemagick
 
 libinput
 udisks2
