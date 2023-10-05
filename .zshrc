@@ -109,3 +109,4 @@ export NNN_TERMINAL='alacritty --title preview-tui'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="exa --long"
 alias la="exa --long --tree"
+alias gs="git status"
