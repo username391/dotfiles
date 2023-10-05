@@ -199,10 +199,10 @@
 
     # Recursive icon lookup. You can set a single theme, instead of having to
     # define all lookup paths.
-    enable_recursive_icon_lookup = false
+    enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
-    icon_theme = Adwaita
+    icon_theme = breeze-dark
     # You can also set multiple icon themes, with the leftmost one being used first.
     # icon_theme = "Adwaita, breeze"
 
@@ -219,7 +219,7 @@
 
     # Paths to default icons (only neccesary when not using recursive icon lookup)
     # icon_path = /usr/share/icons/Adwaita/16x16/status
-	icon_path = /usr/share/icons/breeze-dark/status/16/
+	# icon_path = /usr/share/icons/breeze-dark/status/16/
 
     ### History ###
 
