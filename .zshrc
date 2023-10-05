@@ -84,6 +84,23 @@ export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='p:preview-tui'
 export NNN_TERMINAL='alacritty --title preview-tui'
 
+n () {
+	# block this in nnn subshell
+	if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+		echo "nnn is already running"
+		return
+	fi
+
+	export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+	nnn -Rd "$@"
+
+	if [ -f "$NNN_TMPFILE" ]; then
+		. "$NNN_TMPFILE"
+		rm -f "$$NNN_TMPFILE"
+	fi
+}
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -110,3 +127,4 @@ export NNN_TERMINAL='alacritty --title preview-tui'
 alias ls="exa --long"
 alias la="exa --long --tree"
 alias gs="git status"
+
