@@ -201,3 +201,7 @@ exec_always --no-startup-id setxkbmap -layout us,ru -option grp:caps_toggle
 
 # daemon for notifications
 exec_always --no-startup-id dunst
+
+
+
+no_focus [title="preview-tui"]

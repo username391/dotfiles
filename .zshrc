@@ -79,6 +79,11 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# NNN
+export NNN_FIFO=/tmp/nnn.fifo
+export NNN_PLUG='p:preview-tui'
+export NNN_TERMINAL='alacritty --title preview-tui'
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
