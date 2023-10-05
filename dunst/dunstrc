@@ -459,4 +459,8 @@
    appname = "volume.sh"
    set_stack_tag = "volume"
 
+[stack-wallpapers]
+	appname = "wallpaper-change"
+	set_stack_tag = "wallpaper"
+
 # vim: ft=cfg
