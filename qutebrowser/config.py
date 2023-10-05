@@ -4,13 +4,21 @@ from qutebrowser.config.config import ConfigContainer
 config: ConfigAPI = config
 c: ConfigContainer = c
 
-BACKGROUND = "#1E1E2E"
-FOREGROUND = "#CDD6F4"
-ACTIVE = "#94E2D5"
+# BACKGROUND = "#1E1E2E"
+# FOREGROUND = "#CDD6F4"
+# ACTIVE = "#94E2D5"
 YELLOW = "#F9E2AF"
 GREEN = "#A6E3A1"
 BLACK = "#45475A"
 BLUE = "#89B4FA"
+
+
+BACKGROUND = "#191724"
+# FOREGROUND = "#EBBCBA"
+FOREGROUND = "#908CAA"
+ACTIVE = "#26233A"
+
+
 
 config.load_autoconfig(False)
 
@@ -27,7 +35,7 @@ config.set("content.javascript.clipboard", "access")
 
 c.url.searchengines = {
     "DEFAULT": "https://www.google.com/search?q={}",
-    "im": "https://images.yandex.ru/?q={}"
+    "im": "https://yandex.ru/images/search?text={}"
 }
 c.url.start_pages = c.url.default_page
 
@@ -88,8 +96,8 @@ c.colors.tabs.odd.fg = FOREGROUND
 c.colors.tabs.even.fg = FOREGROUND
 c.colors.tabs.selected.odd.bg = ACTIVE
 c.colors.tabs.selected.even.bg = ACTIVE
-c.colors.tabs.selected.odd.fg = BLACK
-c.colors.tabs.selected.even.fg = BLACK
+c.colors.tabs.selected.odd.fg = FOREGROUND
+c.colors.tabs.selected.even.fg = FOREGROUND
 
 c.colors.tabs.pinned.odd.bg = BLUE
 c.colors.tabs.pinned.even.bg = BLUE
@@ -100,7 +108,8 @@ c.colors.tabs.pinned.selected.even.bg = BACKGROUND
 # font setting, it's replaced with the fonts listed here. If set to an
 # empty value, a system-specific monospace default is used.
 # Type: List of Font, or Font
-c.fonts.default_family = '"Source Code Pro"'
+# c.fonts.default_family = '"Ubuntu Nerd"'
+c.fonts.default_family = '"Ubuntu Nerd"'
 
 # Default font size to use. Whenever "default_size" is used in a font
 # setting, it's replaced with the size listed here. Valid values are
@@ -111,11 +120,11 @@ c.fonts.default_size = '11pt'
 
 # Font used in the completion widget.
 # Type: Font
-c.fonts.completion.entry = '11pt "Source Code Pro"'
+c.fonts.completion.entry = '11pt "Ubuntu Nerd"'
 
 # Font used for the debugging console.
 # Type: Font
-c.fonts.debug_console = '11pt "Source Code Pro"'
+c.fonts.debug_console = '11pt "Ubuntu Nerd"'
 
 # Font used for prompts.
 # Type: Font
@@ -123,7 +132,7 @@ c.fonts.prompts = 'default_size sans-serif'
 
 # Font used in the statusbar.
 # Type: Font
-c.fonts.statusbar = '11pt "Source Code Pro"'
+c.fonts.statusbar = '11pt "Ubuntu Nerd"'
 
 
 # binds
