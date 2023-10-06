@@ -191,6 +191,9 @@ bindsym	Shift+Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh --clipb
 bindsym $mod+u exec --no-startup-id $HOME/scripts/set_random_wallpaper.sh $HOME/wallpapers
 
 
+# show notifications from history
+bindsym $mod+n exec --no-startup-id dunstctl history-pop
+bindsym $mod+Shift+n exec --no-startup-id dunstctl history-clear
 
 # bar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
