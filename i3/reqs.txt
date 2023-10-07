@@ -23,6 +23,7 @@ git
 exa
 man-db
 imagemagick
+rsync
 
 libinput
 udisks2
