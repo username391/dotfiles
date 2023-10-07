@@ -26,6 +26,7 @@ imagemagick
 
 libinput
 udisks2
+udiskie
 ntfs-3g # for ntfs support
 alsa-plugins
 pulseaudio-alsa
