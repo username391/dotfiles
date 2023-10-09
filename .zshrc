@@ -127,7 +127,7 @@ n () {
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="exa --long"
-alias la="exa --long --tree"
+alias ls="exa --long --icons"
+alias la="exa --long --tree --icons"
 alias gs="git status"
 
