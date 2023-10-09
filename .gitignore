@@ -12,6 +12,9 @@ mimeapps.list
 user-dirs.dirs
 user-dirs.locale
 xdg-terminals.list
+kdeglobals
+okularpartrc
+okularrc
 
 pulse/
 nvim/
@@ -40,3 +43,5 @@ totem/
 transmission/
 udiskie/
 gedit/
+calibre/
+session/
