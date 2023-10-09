@@ -5,8 +5,11 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.85
-  decorations: none
+  dimensions:
+    columns: 120
+    lines: 30
+  opacity: 0.90
+  decorations: full
 
 scrolling:
   history: 10000
@@ -25,7 +28,7 @@ font:
   bold_italic:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
-  size: 10
+  size: 12
 draw_bold_text_with_bright_colors: true
 
 import:
