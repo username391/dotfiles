@@ -4,6 +4,14 @@ kritadisplayrc
 kritarc
 qutebrowser/quickmarks
 qutebrowser/autoconfig.yml
+.gsd-keyboard.settings-ported
+GNOME-xdg-terminals.list
+dleyna-renderer-service.conf
+dleyna-server-service.conf
+mimeapps.list
+user-dirs.dirs
+user-dirs.locale
+xdg-terminals.list
 
 pulse/
 nvim/
@@ -19,3 +27,16 @@ Pinta/
 nnn/
 htop/
 sqlitebrowser/
+VirtualBox/
+autostart/
+evolution/
+filemanager-actions/
+gnome-builder/
+gnome-control-center/
+gtk-4.0/
+nautilus/
+simple-fb2-reader/
+totem/
+transmission/
+udiskie/
+gedit/
