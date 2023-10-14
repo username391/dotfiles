@@ -5,6 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export HISTFILE=$HOME/.zsh_history
+export HISTSIZE=50000
+export SAVEHIST=50000
+
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
 
 # autocd
 setopt auto_cd
@@ -94,12 +100,13 @@ bindkey -M viins "^O" copybuffer
 bindkey -M vicmd "^O" copybuffer
 
 # exa aliases
-alias ls="exa --long --icons"
-alias la="exa --long --tree --icons"
+alias ls="exa --long --icons --group-directories-first"
+alias la="exa --long --tree --icons --group-directories-first"
 
 # git aliases
 alias grv="git remote -v"
 alias gs="git status"
+alias gd="git diff"
 
 # pacman
 alias pacmanclean="sudo pacman -Rs $(pacman -Qtdq)"
@@ -110,8 +117,15 @@ alias yaclean="yay -Scc"
 alias yaupg="yay -Syyu --noconfirm"
 
 # history
+alias history='history 1 -1'
 alias h='history'
-alias hs='history | grep'
-alias hsi='history | grep -i'
+alias hg='history | grep'
+alias hgi='history | grep -i'
+
+# bluetooth
+alias blc='bluetoothctl connect'
+alias bld='bluetoothctl disconnect'
 
 
+# some variables
+export HP_ID='18:B9:6E:01:7C:53'
