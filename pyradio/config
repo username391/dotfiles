@@ -66,7 +66,7 @@ enable_mouse = False
 #     x: enabled and repeat every x seconds
 #
 # Default value: -1
-enable_notifications = -1
+enable_notifications = 0
 
 # Station icon
 # Radio Browser will provide an icon for some of its stations.
