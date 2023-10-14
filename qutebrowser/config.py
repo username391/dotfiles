@@ -36,7 +36,8 @@ config.set("content.javascript.clipboard", "access")
 c.url.searchengines = {
     "DEFAULT": "https://www.google.com/search?q={}",
     "im": "https://yandex.ru/images/search?text={}",
-    "imw": "https://yandex.ru/images/search?isize=wallpaper&text={}&wp=wh16x9_1920x1080"
+    "imw": "https://yandex.ru/images/search?isize=wallpaper&text={}&wp=wh16x9_1920x1080",
+    "yt": "https://www.youtube.com/results?search_query={}"
 }
 c.url.start_pages = c.url.default_page
 
