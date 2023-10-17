@@ -5,6 +5,7 @@ xkb-switch
 yt-dlp
 networkmanager-dmenu-git
 pyradio
+7-zip-full
 
 
 # pacman
@@ -25,6 +26,7 @@ exa
 man-db
 imagemagick
 rsync
+unzip
 
 libinput
 udisks2
