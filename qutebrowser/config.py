@@ -18,6 +18,7 @@ BACKGROUND = "#191724"
 FOREGROUND = "#908CAA"
 ACTIVE = "#26233A"
 
+USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'
 
 
 config.load_autoconfig(False)
@@ -32,6 +33,7 @@ config.set("tabs.show", "multiple")
 config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
 config.set('content.cookies.accept', 'all', 'devtools://*')
 config.set("content.javascript.clipboard", "access")
+config.set('content.headers.user_agent', USER_AGENT)
 
 c.url.searchengines = {
     "DEFAULT": "https://www.google.com/search?q={}",
