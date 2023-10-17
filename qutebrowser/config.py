@@ -26,7 +26,7 @@ config.load_autoconfig(False)
 c.aliases = {'q': 'quit', 'w': 'session-save', 'wq': 'quit --save'}
 
 # Setting dark mode
-config.set("colors.webpage.darkmode.enabled", True)
+config.set("colors.webpage.darkmode.enabled", False)
 # hide tabs if there is only one
 config.set("tabs.show", "multiple")
 
@@ -146,5 +146,5 @@ config.bind("xb", "config-cycle statusbar.show always never")
 config.bind("xt", "config-cycle tabs.show multiple never")
 config.bind("xx", "config-cycle statusbar.show always never;;config-cycle tabs.show multiple never")
 
-config.bind("xD", "hint links spawn python /home/me/pro/download.py {hint-url}")
+config.bind("xD", "hint links spawn python /home/me/projects/tg_project/ytdownload.py {hint-url}")
 
