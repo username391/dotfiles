@@ -21,7 +21,7 @@ ACTIVE = "#26233A"
 USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'
 
 
-config.load_autoconfig(False)
+config.load_autoconfig(True)
 
 c.aliases = {'q': 'quit', 'w': 'session-save', 'wq': 'quit --save'}
 
@@ -147,4 +147,5 @@ config.bind("xt", "config-cycle tabs.show multiple never")
 config.bind("xx", "config-cycle statusbar.show always never;;config-cycle tabs.show multiple never")
 
 config.bind("xD", "hint links spawn python /home/me/projects/tg_project/ytdownload.py {hint-url}")
+config.bind("xd", "spawn python /home/me/projects/tg_project/ytdownload.py {url}")
 

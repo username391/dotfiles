@@ -3,7 +3,6 @@ QtProject.conf
 kritadisplayrc
 kritarc
 qutebrowser/quickmarks
-qutebrowser/autoconfig.yml
 .gsd-keyboard.settings-ported
 GNOME-xdg-terminals.list
 dleyna-renderer-service.conf
