@@ -99,6 +99,9 @@ bindkey -M emacs "^O" copybuffer
 bindkey -M viins "^O" copybuffer
 bindkey -M vicmd "^O" copybuffer
 
+# other aliases
+alias vim="nvim"
+
 # exa aliases
 alias ls="exa --long --icons --group-directories-first"
 alias la="exa --long --tree --icons --group-directories-first"
