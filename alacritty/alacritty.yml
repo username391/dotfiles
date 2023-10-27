@@ -8,7 +8,7 @@ window:
   dimensions:
     columns: 120
     lines: 30
-  opacity: 0.97
+  opacity: 0.80
   decorations: full
 
 scrolling:
@@ -28,11 +28,11 @@ font:
   bold_italic:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
-  size: 12
+  size: 11
 draw_bold_text_with_bright_colors: true
 
-import:
-  - ~/.config/alacritty/themes/rose-pine.yml
+# import:
+  # - ~/.config/alacritty/themes/rose-pine.yml
 
 selection:
   save_to_clipboard: false
@@ -43,3 +43,6 @@ shell:
 key_bindings:
   - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
 
+colors:
+  primary:
+    background: "#000000"
