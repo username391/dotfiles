@@ -6,15 +6,6 @@
 
 config_version: 2
 settings:
-  content.notifications.enabled:
-    https://mail.yandex.ru: false
-  content.register_protocol_handler:
-    https://mail.yandex.ru?mailto=%25s: false
-  statusbar.show:
-    global: never
-  tabs.show:
-    global: never
-
   bindings.key_mappings:
     global:
       <Ctrl+6>: <Ctrl+^>
@@ -26,67 +17,77 @@ settings:
       <Enter>: <Return>
       <Shift+Enter>: <Return>
       <Shift+Return>: <Return>
-      й: q
-      ц: w
-      у: e
-      к: r
-      е: t
-      н: y
-      г: u
-      ш: i
-      щ: o
-      з: p
-      х: '['
-      ъ: ']'
-      ф: a
-      ы: s
-      в: d
-      а: f
-      п: g
-      р: h
-      о: j
-      л: k
-      д: l
-      ж: ';'
-      э: ''''
-      я: z
-      ч: x
-      с: c
-      м: v
-      и: b
-      т: n
-      ь: m
-      б: ','
-      ю: '.'
-      Й: Q
-      Ц: W
-      У: E
-      К: R
-      Е: T
-      Н: Y
-      Г: U
-      Ш: I
-      Щ: O
-      З: P
-      Х: '{'
-      Ъ: '}'
-      Ф: A
-      Ы: S
-      В: D
       А: F
+      Б: <
+      В: D
+      Г: U
+      Д: L
+      Е: T
+      Ж: ':'
+      З: P
+      И: B
+      Й: Q
+      К: R
+      Л: K
+      М: V
+      Н: Y
+      О: J
       П: G
       Р: H
-      О: J
-      Л: K
-      Д: L
-      Ж: ':'
-      Э: '"'
-      Я: Z
-      Ч: X
       С: C
-      М: V
-      И: B
       Т: N
+      У: E
+      Ф: A
+      Х: '{'
+      Ц: W
+      Ч: X
+      Ш: I
+      Щ: O
+      Ъ: '}'
+      Ы: S
       Ь: M
-      Б: '<'
+      Э: '"'
       Ю: '>'
+      Я: Z
+      а: f
+      б: ','
+      в: d
+      г: u
+      д: l
+      е: t
+      ж: ;
+      з: p
+      и: b
+      й: q
+      к: r
+      л: k
+      м: v
+      н: y
+      о: j
+      п: g
+      р: h
+      с: c
+      т: n
+      у: e
+      ф: a
+      х: '['
+      ц: w
+      ч: x
+      ш: i
+      щ: o
+      ъ: ']'
+      ы: s
+      ь: m
+      э: ''''
+      ю: .
+      я: z
+  content.notifications.enabled:
+    https://mail.yandex.ru: false
+    https://www.tinkoff.ru: false
+  content.register_protocol_handler:
+    https://mail.yandex.ru?mailto=%25s: false
+  statusbar.show:
+    global: always
+  tabs.show:
+    global: multiple
+
