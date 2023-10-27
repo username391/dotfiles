@@ -47,3 +47,4 @@ session/
 chromium/
 torbrowser/
 Postman/
+**/__pycache__/
