@@ -27,6 +27,7 @@ man-db
 imagemagick
 rsync
 unzip
+unrar
 
 libinput
 udisks2
