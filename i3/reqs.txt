@@ -9,6 +9,7 @@ pyradio
 
 
 # pacman
+rofi
 xdo
 qutebrowser
 alacritty
