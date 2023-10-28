@@ -14,6 +14,7 @@ xdg-terminals.list
 kdeglobals
 okularpartrc
 okularrc
+.p10k.zsh
 
 pulse/
 nvim/
