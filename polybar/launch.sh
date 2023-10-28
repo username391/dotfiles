@@ -8,3 +8,5 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 polybar mainbar &
 
 echo "Polybar загрузился..."
+(xdo id -m -N Polybar && polybar-msg cmd hide)&
+
