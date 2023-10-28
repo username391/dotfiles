@@ -9,6 +9,7 @@ pyradio
 
 
 # pacman
+xdo
 qutebrowser
 alacritty
 xcursor-themes
