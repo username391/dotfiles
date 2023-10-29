@@ -10,7 +10,7 @@ configuration {
 }
 
 * {
-    font: "Montserrat 9";
+    font: "Ubuntu Nerd Font 15";
 
     bg0:  #24242480;
     bg1:  #363636;
@@ -40,7 +40,7 @@ mainbox {
 inputbar {
   background-color: @bg2;
 
-  margin:   0px calc( 50% - 120px );
+  margin:   0px calc( 40% - 120px );
   padding:  2px 4px;
   spacing:  4px;
 
