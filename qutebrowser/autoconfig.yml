@@ -84,10 +84,10 @@ settings:
   content.notifications.enabled:
     https://mail.yandex.ru: false
     https://www.tinkoff.ru: false
+    https://zelenka.guru: false
   content.register_protocol_handler:
     https://mail.yandex.ru?mailto=%25s: false
   statusbar.show:
     global: always
   tabs.show:
     global: multiple
-
