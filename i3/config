@@ -224,5 +224,6 @@ no_focus [title="preview-tui"]
 
 # polybar
 # перенес в конец, чтобы все успело запуститься
+# Нужно передать агрумент --hidden для запуска в скрытом режиме
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
