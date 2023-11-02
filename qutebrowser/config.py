@@ -146,6 +146,10 @@ config.bind("xb", "config-cycle statusbar.show always never")
 config.bind("xt", "config-cycle tabs.show multiple never")
 config.bind("xx", "config-cycle statusbar.show always never;;config-cycle tabs.show multiple never")
 
-config.bind("xD", "hint links spawn python /home/me/projects/tg_project/ytdownload.py {hint-url}")
+config.bind(
+    "xD",
+    "hint links spawn python /home/me/projects/tg_project/test.py {hint-url}"
+    # "hint links spawn python /home/me/projects/tg_project/ytdownload.py {hint-url}"
+)
 config.bind("xd", "spawn python /home/me/projects/tg_project/ytdownload.py {url}")
 
