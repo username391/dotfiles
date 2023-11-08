@@ -466,9 +466,7 @@
 	appname = "wallpaper-change"
 	set_stack_tag = "wallpaper"
 
-[espeak]
+[play-sound]
 summary = "*"
 script = "~/scripts/play-sound.sh"
-
-# vim: ft=cfg
 
