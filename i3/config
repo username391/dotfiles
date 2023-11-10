@@ -195,10 +195,18 @@ bindsym $mod+$alt+Shift+minus gaps inner current minus 5
 #   i3-msg "gaps inner current minus 5"
 
 # screenshots
+# если используется клавиша super - тогда сохраняем, если нет - копируем
+# -- entire screen --
 bindsym	$mod+Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh
 bindsym	Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh --clipboard
+
+# -- select and screenshot one window --
+bindsym	$mod+Ctrl+Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh --window
+bindsym	Ctrl+Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh --clipboard --window
+
+# -- select and screenshot area --
 bindsym	$mod+Shift+Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh --area
-bindsym	Shift+Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh --clipboard --area
+bindsym	Shift+Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh --area --clipboard
 
 # change wallpaper
 bindsym $mod+u exec --no-startup-id $HOME/scripts/set_random_wallpaper.sh $HOME/wallpapers
