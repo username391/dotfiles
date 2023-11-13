@@ -148,8 +148,11 @@ config.bind("xx", "config-cycle statusbar.show always never;;config-cycle tabs.s
 
 config.bind(
     "xD",
-    "hint links spawn python /home/me/projects/tg_project/test.py {hint-url}"
-    # "hint links spawn python /home/me/projects/tg_project/ytdownload.py {hint-url}"
+    "hint links spawn /home/me/scripts/download-video.sh {hint-url} 'unspec'"
 )
-config.bind("xd", "spawn python /home/me/projects/tg_project/ytdownload.py {url}")
+config.bind(
+    "xd",
+    "hint links spawn /home/me/scripts/download-video.sh {hint-url}"
+)
+# config.bind("xd", "spawn python /home/me/projects/tg_project/ytdownload.py {url}")
 
