@@ -134,3 +134,8 @@ alias cp='rsync -aP'
 
 # some variables
 export HP_ID='18:B9:6E:01:7C:53'
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+bindkey '^H' backward-kill-word
+bindkey '5~' kill-word
