@@ -129,6 +129,8 @@ alias hgi='history | grep -i'
 alias blc='bluetoothctl connect'
 alias bld='bluetoothctl disconnect'
 
+# cp command
+alias cp='rsync -aP'
 
 # some variables
 export HP_ID='18:B9:6E:01:7C:53'
