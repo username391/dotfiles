@@ -29,10 +29,12 @@ ntfs-3g # for ntfs support
 pulseaudio-alsa
 pulseaudio-bluetooth
 qutebrowser
+ranger
 ripgrep
 rofi
 rsync
 scrot
+thunar
 udiskie
 udisks2
 unrar
@@ -57,3 +59,6 @@ xdo
 
 # picom should be installed from
 https://github.com/pijulius/picom
+
+nnn should be compiled from source
+https://github.com/jarun/nnn
