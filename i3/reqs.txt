@@ -17,7 +17,6 @@ alacritty
 xcursor-themes
 keepassxc
 feh
-picom
 scrot
 xclip
 dunst
@@ -53,3 +52,7 @@ bluez-utils
 # $ connect {id}
 # $ disconnect {id}
 # $ scan off
+
+
+# picom should be installed from
+https://github.com/pijulius/picom
