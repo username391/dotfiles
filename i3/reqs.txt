@@ -11,6 +11,7 @@ pyradio
 # pacman
 rofi
 xdo
+light
 qutebrowser
 alacritty
 xcursor-themes
