@@ -1,47 +1,48 @@
-
-# yay
-xkblayout-state
-xkb-switch
-yt-dlp
+### To install via yay
+7-zip-full
 networkmanager-dmenu-git
 pyradio
-7-zip-full
+xkb-switch
+xkblayout-state
+yt-dlp
 
 
-# pacman
-rofi
-xdo
-light
-qutebrowser
+### To install via pacman
 alacritty
-xcursor-themes
-keepassxc
-feh
-scrot
-xclip
-dunst
-lxappearance
-ripgrep
-github-cli
-git
-exa
-man-db
-imagemagick
-rsync
-unzip
-unrar
-ffmpegthumbs
-krita
-filelight
-
-libinput
-udisks2
-udiskie
-ntfs-3g # for ntfs support
 alsa-plugins
+bluez-utils
+dunst
+exa
+feh
+ffmpegthumbs
+filelight
+git
+github-cli
+imagemagick
+keepassxc
+krita
+libinput
+light
+lxappearance
+man-db
+ntfs-3g # for ntfs support
 pulseaudio-alsa
 pulseaudio-bluetooth
-bluez-utils
+qutebrowser
+ripgrep
+rofi
+rsync
+scrot
+udiskie
+udisks2
+unrar
+unzip
+xclip
+xcursor-themes
+xdo
+
+
+### Enable bluetooth daemon
 # systemctl enable bluetooth.service
 # bluetooth
 # $ power on
