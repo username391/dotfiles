@@ -33,6 +33,7 @@ unzip
 unrar
 ffmpegthumbs
 krita
+filelight
 
 libinput
 udisks2
