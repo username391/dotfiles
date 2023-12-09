@@ -5,6 +5,7 @@ pyradio
 xkb-switch
 xkblayout-state
 yt-dlp
+focalboard-bin
 
 
 ### To install via pacman
