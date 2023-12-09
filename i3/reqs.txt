@@ -6,6 +6,7 @@ xkb-switch
 xkblayout-state
 yt-dlp
 focalboard-bin
+woeusb
 
 
 ### To install via pacman
