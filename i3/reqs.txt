@@ -27,6 +27,7 @@ libinput
 light
 lxappearance
 man-db
+ninja
 ntfs-3g # for ntfs support
 pulseaudio-alsa
 pulseaudio-bluetooth
@@ -38,7 +39,6 @@ rsync
 scrot
 thunar
 udiskie
-udisks2
 unrar
 unzip
 xclip
