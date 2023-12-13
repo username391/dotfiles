@@ -29,6 +29,7 @@ libinput
 light
 lxappearance
 man-db
+meson
 ninja
 ntfs-3g # for ntfs support
 pulseaudio-alsa
