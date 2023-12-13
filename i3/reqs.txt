@@ -15,6 +15,7 @@ orchis-theme-git
 ### To install via pacman
 alacritty
 alsa-plugins
+alsa-utils
 bat
 bluez
 bluez-utils
