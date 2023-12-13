@@ -31,6 +31,7 @@ lxappearance
 man-db
 meson
 ninja
+npm
 ntfs-3g # for ntfs support
 pulseaudio-alsa
 pulseaudio-bluetooth
