@@ -34,6 +34,7 @@ light
 lxappearance
 man-db
 meson
+mpv
 ninja
 npm
 ntfs-3g # for ntfs support
