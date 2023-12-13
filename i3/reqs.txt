@@ -46,6 +46,7 @@ unrar
 unzip
 xclip
 xcursor-themes
+xf86-input-synaptics
 xdo
 
 
