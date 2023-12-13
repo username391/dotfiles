@@ -8,6 +8,9 @@ yt-dlp
 focalboard-bin
 woeusb
 
+# themes with yay
+orchis-theme-git
+
 
 ### To install via pacman
 alacritty
