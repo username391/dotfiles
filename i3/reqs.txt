@@ -50,6 +50,7 @@ xdo
 
 ### Enable bluetooth daemon
 # systemctl enable bluetooth.service
+# systemctl start bluetooth.service
 # bluetooth
 # $ power on
 # $ agent on
