@@ -50,6 +50,11 @@ xcursor-themes
 xf86-input-libinput
 xdo
 
+# extra
+chromium
+libreoffice-fresh
+jre-openjdk-headless # for libreoffice macros
+
 
 ### Enable bluetooth daemon
 # systemctl enable bluetooth.service
