@@ -12,6 +12,7 @@ woeusb
 ### To install via pacman
 alacritty
 alsa-plugins
+bat
 bluez-utils
 dunst
 exa
