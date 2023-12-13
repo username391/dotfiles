@@ -13,6 +13,7 @@ woeusb
 alacritty
 alsa-plugins
 bat
+bluez
 bluez-utils
 dunst
 exa
