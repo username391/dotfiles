@@ -42,6 +42,7 @@ pulseaudio-alsa
 pulseaudio-bluetooth
 qutebrowser
 ranger
+redshift
 ripgrep
 rofi
 rsync
