@@ -32,6 +32,7 @@ krita
 libinput
 light
 lxappearance
+maim
 man-db
 meson
 mpv
