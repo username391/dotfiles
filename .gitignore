@@ -15,6 +15,7 @@ kdeglobals
 okularpartrc
 okularrc
 .p10k.zsh
+*.log
 
 pulse/
 nvim/
