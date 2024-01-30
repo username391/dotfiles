@@ -41,6 +41,7 @@ npm
 ntfs-3g # for ntfs support
 pulseaudio-alsa
 pulseaudio-bluetooth
+qt5-webview
 qutebrowser
 ranger
 redshift
@@ -50,6 +51,7 @@ rsync
 scrot
 thunar
 udiskie
+ueberzug
 unrar
 unzip
 xclip
