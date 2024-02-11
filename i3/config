@@ -232,6 +232,7 @@ exec_always --no-startup-id dunst
 
 no_focus [title="preview-tui"]
 for_window [class="Galculator" instance="galculator"] floating enable
+for_window [title="Media viewer"] fullscreen enable
 
 
 # polybar
