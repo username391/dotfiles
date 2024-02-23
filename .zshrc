@@ -101,6 +101,7 @@ bindkey -M vicmd "^O" copybuffer
 
 # other aliases
 alias vim="nvim"
+alias cb="xclip -selection clipboard"
 
 # exa aliases
 alias ls="exa --long --icons --group-directories-first"
@@ -139,3 +140,11 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey '^H' backward-kill-word
 bindkey '5~' kill-word
+
+# z and zi for zoxide
+eval "$(zoxide init --cmd cd zsh)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
