@@ -49,6 +49,7 @@ ripgrep
 rofi
 rsync
 scrot
+stow
 thunar
 udiskie
 ueberzug
