@@ -8,6 +8,7 @@ fi
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=50000
 export SAVEHIST=50000
+export GOPATH=$HOME/go/
 
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
