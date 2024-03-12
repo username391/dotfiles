@@ -28,7 +28,7 @@ source "$HOME/.zsh/themes/powerlevel10k/prompt_powerlevel9k_setup"
 
 # plugins
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOME/.zsh/zsh-dirhistory/dirhistory.plugin.zsh
+# source $HOME/.zsh/zsh-dirhistory/dirhistory.plugin.zsh
 source $HOME/.zsh/zsh-json-tools/jsontools.plugin.zsh
 
 
