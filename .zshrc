@@ -134,6 +134,9 @@ alias bld='bluetoothctl disconnect'
 # cp command
 alias cp='rsync -aP'
 
+# my scripts
+alias newp='python ~/projects/project-setup/project-setup.py'
+
 # some variables
 export HP_ID='18:B9:6E:01:7C:53'
 
@@ -148,4 +151,5 @@ eval "$(zoxide init --cmd cd zsh)"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
+# the fuck tool
+eval $(thefuck --alias)
