@@ -11,7 +11,6 @@ mimeapps.list
 user-dirs.dirs
 user-dirs.locale
 xdg-terminals.list
-kdeglobals
 okularpartrc
 okularrc
 .p10k.zsh
@@ -107,7 +106,6 @@ kdeconnect/
 kded5rc
 kdedefaults/
 kgammarc
-kglobalshortcutsrc
 kiorc
 kmenueditrc
 konsolerc
