@@ -9,6 +9,7 @@ export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=50000
 export SAVEHIST=50000
 export GOPATH=$HOME/go/
+PATH=$PATH:~/.local/bin
 
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
@@ -133,6 +134,9 @@ alias bld='bluetoothctl disconnect'
 
 # cp command
 alias cp='rsync -aP'
+
+# aliases for custom scripts
+alias sitecheck='python /home/me/projects/check-site/main.py'
 
 # some variables
 export HP_ID='18:B9:6E:01:7C:53'
