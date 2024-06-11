@@ -1,6 +1,8 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -106,6 +108,8 @@ alias vim="nvim"
 alias cb="xclip -selection clipboard"
 
 # exa aliases
+# on ubuntu exa is replaced with eza
+alias exa='eza'
 alias ls="exa --long --icons --group-directories-first"
 alias la="exa --long --tree --icons --group-directories-first"
 
@@ -115,8 +119,8 @@ alias gs="git status"
 alias gd="git diff"
 
 # pacman
-alias pacmanclean="sudo pacman -Rs $(pacman -Qtdq)"
-alias cleancache="sudo pacman -Scc"
+# alias pacmanclean="sudo pacman -Rs $(pacman -Qtdq)"
+# alias cleancache="sudo pacman -Scc"
 
 # yay
 alias yaclean="yay -Scc"
@@ -153,4 +157,8 @@ eval "$(zoxide init --cmd cd zsh)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # the fuck tool
-eval $(thefuck --alias)
+# python 3.12 issue
+# eval $(thefuck --alias)
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
