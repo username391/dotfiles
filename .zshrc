@@ -21,7 +21,9 @@ setopt auto_cd
 
 # theme
 # source "$HOME/.zsh/themes/robbyrussell.zsh-theme"
-source "$HOME/.zsh/themes/powerlevel10k/prompt_powerlevel9k_setup"
+# source "$HOME/.zsh/themes/powerlevel10k/prompt_powerlevel9k_setup"
+# source "$HOME/powerlevel10k/powerlevel10k.zsh-theme"
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.config/.p10k.zsh ]] || source ~/.config/.p10k.zsh
 
 # zsh plugins that i used, but turned off
@@ -162,3 +164,6 @@ eval "$(zoxide init --cmd cd zsh)"
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
+# aliases for ubuntu
+alias python='python3'
+alias pip='pip3'
