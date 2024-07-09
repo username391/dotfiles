@@ -2,14 +2,12 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export HISTFILE=$HOME/.zsh_history
-export HISTSIZE=50000
-export SAVEHIST=50000
 export GOPATH=$HOME/go/
 PATH=$PATH:~/.local/bin
 
@@ -167,3 +165,9 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # aliases for ubuntu
 alias python='python3'
 alias pip='pip3'
+
+source <(fzf --zsh)
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+
