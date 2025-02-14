@@ -1,122 +1,101 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+# transient prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Устанавливаем директорию для zinit и плагинов
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# Проверяем, скачан ли Zinit, если нет - скачиваем
+if [ ! -d "$ZINIT_HOME" ]; then
+	mkdir -p "$(dirname $ZINIT_HOME)"
+	git clone https://github.com/zdharma-continuum/zinit.git --depth=1 "$ZINIT_HOME"
+fi
+
+# Запускаем Zinit
+source "${ZINIT_HOME}/zinit.zsh"
+
+# powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+
+# Пути
 export GOPATH=$HOME/go/
 PATH=$PATH:~/.local/bin
 
-setopt hist_ignore_all_dups
+# Плагины
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+
+# эти сниппеты требуют наличия clipcopy, не знаю, из какого это пакета
+# zinit snippet OMZP::copybuffer
+# zinit snippet OMZP::copypath
+# zinit snipper OMZP::copyfile
+
+# Load completions
+autoload -U compinit && compinit
+
+zinit cdreplay -q
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# Комбинации клавиш
+
+# Искать в истории по текущему вводу (назад/вперед)
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+
+# История команд
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+
+setopt appendhistory
+setopt sharehistory
 setopt hist_ignore_space
-
-# autocd
-setopt auto_cd
-
-# theme
-# source "$HOME/.zsh/themes/robbyrussell.zsh-theme"
-# source "$HOME/.zsh/themes/powerlevel10k/prompt_powerlevel9k_setup"
-# source "$HOME/powerlevel10k/powerlevel10k.zsh-theme"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.config/.p10k.zsh ]] || source ~/.config/.p10k.zsh
-
-# zsh plugins that i used, but turned off
-# git, archlinux, copypath, copyfile, copybuffer, dirhistory, jsontools
-
-# source $ZSH/oh-my-zsh.sh
-
-# plugins
-source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source $HOME/.zsh/zsh-dirhistory/dirhistory.plugin.zsh
-source $HOME/.zsh/zsh-json-tools/jsontools.plugin.zsh
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+setopt autocd
 
 
-# User configuration
-
-# NNN
-export NNN_FIFO=/tmp/nnn.fifo
-export NNN_PLUG='p:preview-tui'
-export NNN_TERMINAL='alacritty --title preview-tui'
-
-n () {
-	# block this in nnn subshell
-	if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-		echo "nnn is already running"
-		return
-	fi
-
-	export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-
-	nnn -d "$@"
-
-	if [ -f "$NNN_TMPFILE" ]; then
-		. "$NNN_TMPFILE"
-		rm -f "$$NNN_TMPFILE"
-	fi
-}
+# Настройки автодополнения
+# не учитывать регистр
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# что-то с цветами, не разобрался, просто скопировал
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# так как выше меню автодополнения заменено на fzf tab отключаем стандартное меню автодополнения
+zstyle ':completion:*' menu no
+# показывать превью
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa --long --icons --group-directories-first $realpath'
+# для zoxide
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'exa --long --icons --group-directories-first $realpath'
 
 
-# copypath from copypath plugin
-function copypath {
-	# If no argument passed, use current directory
-	local file="${1:-.}"
 
-	# If argument is not an absolute path, prepend $PWD
-	[[ $file = /* ]] || file="$PWD/$file"
+# Другие алиасы
+alias vim='nvim'
+alias cb='xclip -selection clipboard'
 
-	# Copy the absolute path without resolving symlinks
-	# If clipcopy fails, exit the function with an error
-	print -n "${file:a}" | clipcopy || return 1
-
-	echo ${(%):-"%B${file:a}%b copied to clipboard."}
-}
-
-# copyfile from copyfile plugin
-function copyfile {
-	emulate -L zsh
-	clipcopy $1
-
-	local file="${1:-.}"
-	[[ $file = /* ]] || file="$PWD/$file"
-	print -n "${file:a}" | clipcopy || return 1
-	echo ${(%):-"%B${file:a}%b content copied to clipboard."}
-}
-
-
-# copybuffer from copybuffer plugin
-copybuffer () {
-  if which clipcopy &>/dev/null; then
-    printf "%s" "$BUFFER" | clipcopy
-  else
-    zle -M "clipcopy not found. Please make sure you have Oh My Zsh installed correctly."
-  fi
-}
-
-
-zle -N copybuffer
-
-bindkey -M emacs "^O" copybuffer
-bindkey -M viins "^O" copybuffer
-bindkey -M vicmd "^O" copybuffer
-
-# other aliases
-alias vim="nvim"
-alias cb="xclip -selection clipboard"
-
-# exa aliases
-# on ubuntu exa is replaced with eza
+# На убунту exa замещена eza
 alias exa='eza'
 alias ls="exa --long --icons --group-directories-first"
 alias la="exa --long --tree --icons --group-directories-first"
 
-# git aliases
 alias grv="git remote -v"
 alias gs="git status"
 alias gd="git diff"
+
+# Shell integrations
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # pacman
 # alias pacmanclean="sudo pacman -Rs $(pacman -Qtdq)"
@@ -139,35 +118,38 @@ alias bld='bluetoothctl disconnect'
 # cp command
 alias cp='rsync -aP'
 
-# aliases for custom scripts
-alias sitecheck='python /home/me/projects/check-site/main.py'
-
-# some variables
-export HP_ID='18:B9:6E:01:7C:53'
-
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey '^H' backward-kill-word
 bindkey '5~' kill-word
 
-# z and zi for zoxide
-eval "$(zoxide init --cmd cd zsh)"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# the fuck tool
-# python 3.12 issue
-# eval $(thefuck --alias)
-
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-
 # aliases for ubuntu
 alias python='python3'
 alias pip='pip3'
 
-source <(fzf --zsh)
-HISTFILE=$HOME/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
+# Временный алиас для wsl
+alias desktop='cd /mnt/c/Users/я/Desktop'
+
+
+# NNN
+export NNN_FIFO=/tmp/nnn.fifo
+export NNN_PLUG='p:preview-tui'
+export NNN_TERMINAL='alacritty --title preview-tui'
+
+n () {
+	# block this in nnn subshell
+	if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+		echo "nnn is already running"
+		return
+	fi
+
+	export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+	nnn -d "$@"
+
+	if [ -f "$NNN_TMPFILE" ]; then
+		. "$NNN_TMPFILE"
+		rm -f "$$NNN_TMPFILE"
+	fi
+}
 
