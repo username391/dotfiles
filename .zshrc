@@ -134,7 +134,9 @@ if [[ -f /etc/os-release ]]; then
 fi
 
 # Временный алиас для wsl
-alias desktop='cd /mnt/c/Users/я/Desktop'
+if [[ -f /proc/version ]] && grep -qi "microsoft" /proc/version; then
+	alias desktop='cd /mnt/c/Users/я/Desktop'
+fi
 
 
 # NNN
