@@ -124,8 +124,14 @@ bindkey '^H' backward-kill-word
 bindkey '5~' kill-word
 
 # aliases for ubuntu
-alias python='python3'
-alias pip='pip3'
+if [[ -f /etc/os-release ]]; then
+	source /etc/os-release
+	if [[ $ID == 'ubuntu' ]]; then
+		alias python='python3'
+		alias pip='pip3'
+		alias ipython='ipython3'
+	fi
+fi
 
 # Временный алиас для wsl
 alias desktop='cd /mnt/c/Users/я/Desktop'
