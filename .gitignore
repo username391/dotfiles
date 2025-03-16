@@ -65,6 +65,7 @@ baloofilerc
 lapce-stable/
 galculator/
 tmux/plugins/
+.config/tmux/plugins
 Windscribe/
 menus/
 systemd/
