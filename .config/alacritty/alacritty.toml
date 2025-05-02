@@ -35,7 +35,7 @@ multiplier = 3
 [selection]
 save_to_clipboard = false
 
-[shell]
+[terminal.shell]
 program = "/usr/bin/zsh"
 
 [window]
@@ -53,3 +53,5 @@ lines = 20
 [window.padding]
 x = 0
 y = 0
+
+[terminal]
