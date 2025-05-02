@@ -14,3 +14,15 @@ cd dotfiles
 stow .
 ```
 
+
+## Tmux
+```
+sudo pacman -S tmux
+```
+
+Download tmux package manager
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm --depth=1
+```
+
+Install tpm with `<PREFIX> + I`
