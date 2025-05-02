@@ -1,0 +1,30 @@
+{
+	"layer": "top",
+	"position": "bottom",
+	"height": 48,
+	"spacing": 3,
+
+	"include": [
+		"~/.config/waybar/modules.json"
+	],
+	"modules-left": [
+		"hyprland/workspaces"
+	],
+	"modules-center": [
+	],
+	"modules-right": [
+		"hyprland/language",
+		// "cpu",
+		// "memory",
+		// "disk",
+		"clock",
+		"network",
+		"battery",
+		"pulseaudio",
+		"bluetooth",
+		// "idle_inhibitor",
+		"tray",
+		"custom/exit"
+	]
+
+}
