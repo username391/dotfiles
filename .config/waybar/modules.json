@@ -159,15 +159,15 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon}  {format_source}",
+        "format-bluetooth-muted": " {icon}  {format_source}",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
@@ -178,11 +178,12 @@
 
     // Bluetooth
     "bluetooth": {
-        "format-disabled": "",
-        "format-off": "",
+		"format": "  ",
+        "format-disabled": " 󰂲 ",
+        "format-off": "off",
         "interval": 30,
         "on-click": "blueman-manager",
-        "format-no-controller": ""
+        "format-no-controller": "",
     },
 
     // Other
