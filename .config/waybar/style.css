@@ -76,6 +76,12 @@ window#waybar {
     border-radius: 15px;
 }
 
+#workspaces button.urgent {
+    background: #f53c3c;
+    border-radius: 15px;
+}
+
+
 /* -----------------------------------------------------
  * Tooltips
  * ----------------------------------------------------- */
@@ -322,7 +328,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #tray {
-    margin:0px 10px 0px 0px;
+    margin:0px 10px -3px 0px;
 }
 
 #tray > .passive {

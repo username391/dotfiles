@@ -182,6 +182,8 @@
         "format-disabled": " 󰂲 ",
         "format-off": "off",
         "interval": 30,
+		"tooltip-format": "Connected device: {device_alias} | {device_battery_percentage} %",
+		
         "on-click": "blueman-manager",
         "format-no-controller": "",
     },
