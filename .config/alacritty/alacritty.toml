@@ -28,6 +28,16 @@ action = "SpawnNewInstance"
 key = "Return"
 mods = "Super|Shift"
 
+[[keyboard.bindings]]
+key = "С"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "М"
+mods = "Control|Shift"
+action = "Paste"
+
 [scrolling]
 history = 10000
 multiplier = 3
