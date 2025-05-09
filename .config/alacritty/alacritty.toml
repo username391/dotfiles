@@ -4,6 +4,10 @@ draw_bold_text_with_bright_colors = true
 [colors.primary]
 background = "#000000"
 
+[colors.selection]
+text = "#908caa"
+background = "#26233a"
+
 [font]
 size = 15
 
