@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Hiddify [as root]
+Exec=/home/me/.config/scripts/hiddify-launch.sh
+Icon=network-vpn
+Terminal=false
+Categories=Network;
+
