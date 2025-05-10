@@ -1,3 +1,6 @@
+export GTK_THEME=Catppuccin-Mocha-Standard-Blue-Dark
+export XDG_CURRENT_DESKTOP=Hyprland
+
 # transient prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -131,6 +134,8 @@ if [[ -f /etc/os-release ]]; then
 		alias pip='pip3'
 		alias ipython='ipython3'
 	fi
+
+	alias сдуфк='~/.config/scripts/clear-and_change-layout.sh'
 fi
 
 # Временный алиас для wsl
