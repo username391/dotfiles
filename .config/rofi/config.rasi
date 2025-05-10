@@ -1,14 +1,9 @@
-configuration {
-	show-icons: true;
+configuration { show-icons: true;
 	modi: "window,drun,ssh,combi";
 	font: "Ubuntu Mono 10";
 	combi-modi: "window,drun,ssh";
 	terminal: "/usr/bin/alacritty";
 }
 
-// @theme "launchpad"
 @theme "rounded-nord-dark"
-// @theme "simpleyt"
-
-
 
