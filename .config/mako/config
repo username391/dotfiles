@@ -7,3 +7,4 @@ margin=10
 default-timeout=5000
 font=JetBrainsMono Nerd Font 12
 actions=true
+on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
