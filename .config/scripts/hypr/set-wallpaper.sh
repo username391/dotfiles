@@ -15,7 +15,7 @@ done
 # Проверяем, есть ли аргумент, но только если $filename уже не задан из кэша
 if [ -z "$filename" ]; then
 	if [ -z "$1" ]; then
-		notify-send.sh --replace-file 91222 "No file passed!"
+		notify-send.sh --replace-file ~/.cache/91222 "No file passed!"
 		echo "No file passed!"
 		exit 1
 	else
@@ -34,12 +34,12 @@ done
 
 # Проверка существует ли файл
 if [ ! -f $filename ]; then
-	notify-send.sh --replace-file 91222 "File $filename does not exist"
+	notify-send.sh --replace-file ~/.cache/91222 "File $filename does not exist"
 	echo "File $filename does not exist"
 	exit 1
 fi
 
-notify-send.sh --replace-file 91222 "wallpaper changed" "$(basename "$filename")" -i "image-jpeg" -a "wallpaper-change"
+notify-send.sh --replace-file ~/.cache/91222 "wallpaper changed" "$(basename "$filename")" -i "image-jpeg" -a "wallpaper-change"
 
 # Устанавливаем обои
 hyprctl hyprpaper unload all
