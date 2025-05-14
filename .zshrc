@@ -1,5 +1,6 @@
 export GTK_THEME=Catppuccin-Mocha-Standard-Blue-Dark
 export XDG_CURRENT_DESKTOP=Hyprland
+export EDITOR=nvim
 
 # transient prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -148,7 +149,11 @@ fi
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='p:preview-tui'
 export NNN_TERMINAL='alacritty --title preview-tui'
+export NNN_PREVIEWIMGPROG="viu"
+export NNN_OPENER="$HOME/.config/scripts/nnn-opener.sh"
 
+
+alias nnn='nnn -e'
 n () {
 	# block this in nnn subshell
 	if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
