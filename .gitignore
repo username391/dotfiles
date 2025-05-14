@@ -139,3 +139,4 @@ xdg-desktop-portal-kderc
 xsettingsd/
 font-manager/
 .config/fontconfig/conf.d/
+.config/Sointu/
