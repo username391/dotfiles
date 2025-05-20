@@ -140,3 +140,5 @@ xsettingsd/
 font-manager/
 .config/fontconfig/conf.d/
 .config/Sointu/
+.config/Android Open Source Project/
+.config/Google/
