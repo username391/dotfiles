@@ -40,7 +40,6 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec --no-startup-id alacritty
 
 # kill focused window
-bindsym $mod+Shift+q kill
 
 # start dmenu/rofi
 bindsym $mod+p exec --no-startup-id QT_SCALE_FACTOR=1.25 dmenu_run -l 10 -p "Run:"
