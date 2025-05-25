@@ -91,6 +91,7 @@ alias cb='xclip -selection clipboard'
 alias exa='eza'
 alias ls="exa --long --icons --group-directories-first"
 alias la="exa --long --tree --icons --group-directories-first"
+alias ltree="exa --group-directories-first --tree --git --header --level 2 --icons always"
 
 alias grv="git remote -v"
 alias gs="git status"
