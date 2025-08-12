@@ -5,26 +5,29 @@
 	"spacing": 3,
 
 	"include": [
-		"~/.config/waybar/modules.json"
+		"~/.config/waybar/modules.jsonc"
 	],
 	"modules-left": [
-		"hyprland/workspaces"
+		// "custom/appmenu",
+		"hyprland/workspaces",
 	],
 	"modules-center": [
 	],
 	"modules-right": [
+		//	"custom/kb",
+		// "idle_inhibitor",
 		"hyprland/language",
+		// "backlight",
+		// "custom/uptime",
 		// "cpu",
 		// "memory",
 		// "disk",
 		"clock",
-		"network",
 		"battery",
 		"pulseaudio",
+		"network",
 		"bluetooth",
-		// "idle_inhibitor",
 		"tray",
 		"custom/exit"
 	]
-
 }
