@@ -13,7 +13,6 @@ for arg in "$@"; do
 	fi
 done
 
-
 for arg in "$@"; do
 	if [ "$arg" == "--crop" ]; then
 		crop=true
@@ -23,7 +22,6 @@ done
 
 # Если папки нет, создаем ее
 mkdir -p ~/Pictures/screenshots
-
 
 if [ "$use_clipboard" = true ]; then
 	if [ "$crop" = true ]; then
@@ -42,5 +40,5 @@ else
 		grim -t "$filetype" -q "$quality" -o "$(hyprctl monitors | awk '/Monitor/{mon=$2} /focused: yes/{print mon}')" "$filepath"
 	fi
 	notify-send "Скриншот сохранен: $filename" -h string:action:open:"imv $filepath"
+	echo "$filepath"
 fi
-
