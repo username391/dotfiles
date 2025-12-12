@@ -12,19 +12,19 @@ background = "#26233a"
 size = 15
 
 [font.bold]
-family = "JetBrainsMono NF"
+family = "Hermit"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMono NF"
+family = "Hermit"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMono NF"
+family = "Hermit"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMono NF"
+family = "Hermit"
 style = "Regular"
 
 [[keyboard.bindings]]
@@ -33,12 +33,12 @@ key = "Return"
 mods = "Super|Shift"
 
 [[keyboard.bindings]]
-key = "С"
+key = "C"
 mods = "Control|Shift"
 action = "Copy"
 
 [[keyboard.bindings]]
-key = "М"
+key = "V"
 mods = "Control|Shift"
 action = "Paste"
 
@@ -49,7 +49,7 @@ multiplier = 3
 [selection]
 save_to_clipboard = false
 
-[terminal.shell]
+[shell]
 program = "/usr/bin/zsh"
 
 [window]
@@ -67,8 +67,6 @@ lines = 20
 [window.padding]
 x = 0
 y = 0
-
-[terminal]
 
 [env]
 TERM = "xterm-256color"
