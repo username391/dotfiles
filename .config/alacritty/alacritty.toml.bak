@@ -1,0 +1,86 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.primary]
+background = "#292c3c"
+
+[colors.selection]
+text = "#908caa"
+background = "#26233a"
+
+[font]
+# family= "Hurmit NF"
+family = "Hack"
+# family = "JetBrainsMono NF"
+size = 15
+
+[font.bold]
+# family = "JetBrainsMono NF"
+family = "Hermit"
+# family = "Hack"
+style = "Bold"
+
+[font.bold_italic]
+# family = "JetBrainsMono NF"
+# family = "Hack"
+
+family = "Hermit"
+style = "Bold Italic"
+
+[font.italic]
+# family = "Hack"
+family = "Hermit"
+# family = "JetBrainsMono NF"
+style = "Italic"
+
+[font.normal]
+# family = "Hack"
+family = "Hermit"
+# family = "JetBrainsMono NF"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Super|Shift"
+
+[[keyboard.bindings]]
+key = "С"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "М"
+mods = "Control|Shift"
+action = "Paste"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = false
+
+[terminal.shell]
+program = "/usr/bin/zsh"
+
+[window]
+decorations = "full"
+opacity = 0.85
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 100
+lines = 20
+
+[window.padding]
+x = 0
+y = 0
+
+[terminal]
+
+[env]
+TERM = "xterm-256color"
