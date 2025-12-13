@@ -1,0 +1,34 @@
+// -*- mode: jsonc -*-
+{
+	"layer": "top",
+	"position": "bottom",
+	"height": 48,
+	"spacing": 3,
+
+	"include": [
+		"~/.config/waybar/modules.jsonc"
+	],
+	"modules-left": [
+		// "custom/appmenu",
+		"hyprland/workspaces",
+	],
+	"modules-center": [
+	],
+	"modules-right": [
+		//	"custom/kb",
+		// "idle_inhibitor",
+		"hyprland/language",
+		// "backlight",
+		// "custom/uptime",
+		// "cpu",
+		// "memory",
+		// "disk",
+		"clock",
+		"battery",
+		"pulseaudio",
+		"network",
+		"bluetooth",
+		"tray",
+		"custom/exit"
+	]
+}

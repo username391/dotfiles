@@ -1,0 +1,341 @@
+/* Old colors */
+@define-color fgColor #9893a5;
+@define-color fgColorDark #191724;
+@define-color bgColor #191724;
+@define-color bgColorLight #9ccfd8;
+@define-color bgColorLight #9893a5;
+@define-color urgentColor #eb6f92; /* #f53c3c; */
+@define-color iconColor #ffffff;
+
+/* Colors from Rose Pine theme */
+@define-color surfaceColor            #1f1d2e;
+@define-color surfaceColorTransparent rgba(31, 29, 46, 0.7);
+@define-color overlayColor            #26233a;
+@define-color mutedColor              #6e6a86;
+@define-color subtleColor             #908caa;
+
+* {
+    /* font-family: "JetBrainsMono NF", */
+	font-family: "Geist Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    border: none;
+    border-radius: 0px;
+}
+
+window#waybar {
+    /* background-color: rgba(0,0,0,0.2); */
+    /* background-color: rgba(0,0,0, 0.5); */
+	background-color: @surfaceColorTransparent;
+    border-bottom: 0px solid @bgColor;
+    /* color: @fgColor; */
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* -----------------------------------------------------
+ * Workspaces 
+ * ----------------------------------------------------- */
+
+#workspaces {
+    margin: 5px 1px 6px 1px;
+    padding: 0px 1px;
+    border-radius: 15px;
+    border: 0px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 16px;
+    background: @overlayColor;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 15px;
+    border: 0px;
+    color: @subtleColor;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    color: @fgColorDark;
+    background: @bgColorLight;
+    border-radius: 15px;
+    /* min-width: 40px; */
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    color: @bgColor;
+    background: @fgColor;
+    border-radius: 15px;
+}
+
+#workspaces button.urgent {
+    background: @urgentColor;
+    color: @fgColorDark;
+    border-radius: 15px;
+}
+
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+
+tooltip {
+    border-radius: 10px;
+    background-color: @bgColor;
+    opacity:0.9;
+    padding:20px;
+    margin:0px;
+}
+
+tooltip label {
+    color: @fgColor;
+}
+
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+
+#window {
+    background: @bgColor;
+    margin: 10px 15px 10px 0px;
+    padding: 2px 10px 0px 10px;
+    border-radius: 12px;
+    color: @fgColor;
+    font-size:16px;
+    font-weight:normal;
+}
+
+window#waybar.empty #window {
+    background-color:transparent;
+}
+
+/* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+
+#taskbar {
+    background: @fgColor;
+    margin: 6px 15px 6px 0px;
+    padding:0px;
+    border-radius: 15px;
+    font-weight: normal;
+    font-style: normal;
+    border: 3px solid @bgColor;
+}
+
+#taskbar button {
+    margin:0;
+    border-radius: 15px;
+    padding: 0px 5px 0px 5px;
+}
+
+/* -----------------------------------------------------
+ * Modules
+ * ----------------------------------------------------- */
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 5px;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0px;
+}
+
+
+/* Make it BOLD*/
+#pulseaudio,
+#battery,
+#clock,
+#backlight,
+#network,
+#bluetooth,
+#custom-hyprshade
+{
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: @subtleColor;
+	background: @overlayColor;
+    padding: 4px 10px 2px 10px;
+    font-size: 16px;
+}
+
+
+#language {
+	font-size: 16px;
+	font-weight: bold;
+	color: @subtleColor;
+    padding: 4px 10px 2px 10px;
+    margin: 11px 10px 10px 10px;
+}
+
+
+
+#custom-appmenu {
+    background-color: @bgColorLight;
+    color: @fgColorDark;
+    border-radius: 15px;
+    margin: 10px 10px 10px 10px;
+    padding: 4px 10px 2px 10px;
+    color: @subtleColor;
+	background: @overlayColor;
+}
+
+/* -----------------------------------------------------
+ * Custom Exit
+ * ----------------------------------------------------- */
+
+#custom-exit {
+    margin: 2px 20px 0px 0px;
+    padding:0px;
+    font-size:20px;
+    color: @iconColor;
+}
+
+/* -----------------------------------------------------
+ * Hardware Group
+ * ----------------------------------------------------- */
+
+ #disk,#memory,#cpu{
+    margin:0px;
+    padding:0px;
+    font-size:16px;
+    color:@fgColor;
+}
+
+#language {
+    margin-right:10px;
+}
+
+/* -----------------------------------------------------
+ * Clock
+ * ----------------------------------------------------- */
+
+#clock {
+    font-size: 16px;
+    border-radius: 15px;
+    margin: 10px 7px 10px 0px;
+}
+
+/* -----------------------------------------------------
+ * Pulseaudio
+ * ----------------------------------------------------- */
+
+#pulseaudio {
+    font-size: 16px;
+    border-radius: 15px;
+    margin: 10px 10px 10px 0px;
+}
+
+#pulseaudio.muted {
+}
+
+/* -----------------------------------------------------
+ * Network
+ * ----------------------------------------------------- */
+
+#network {
+    font-size: 16px;
+    border-radius: 15px;
+    margin: 10px 10px 10px 0px;
+    font-weight: bold;
+}
+
+#network.ethernet {
+}
+
+#network.wifi {
+	min-width: 38px;
+    font-size: 16px;
+}
+
+/* -----------------------------------------------------
+ * Bluetooth
+ * ----------------------------------------------------- */
+
+ #bluetooth, #bluetooth.on, #bluetooth.connected {
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 15px;
+    margin: 10px 15px 10px 0px;
+}
+
+#bluetooth.off {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* -----------------------------------------------------
+ * Battery
+ * ----------------------------------------------------- */
+
+#battery {
+    font-size: 16px;
+    border-radius: 15px;
+    margin: 10px 10px 10px 0px;
+}
+
+#battery.charging, #battery.plugged {
+}
+
+@keyframes blink {
+    to {
+        background-color: @bgColorLight;
+        color: @fgColorDark;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: @urgentColor;
+    color: @fgColorDark;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+
+#tray {
+    margin:0px 10px -3px 0px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @urgentColor;
+
+}
+
+/* -----------------------------------------------------
+ * Other
+ * ----------------------------------------------------- */
+
+label:focus {
+    background-color: #000000;
+}
+
+#backlight {
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 15px;
+    margin: 10px 15px 10px 0px;
+}
+
+
+#network {
+}
+
+#network.disconnected {
+    background-color: @urgentColor;
+	color: @surfaceColor;
+}
+
