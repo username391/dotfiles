@@ -17,8 +17,12 @@
 
     // Hyprland Window
     "hyprland/window": {
+		"format": "{title}",
+		"icon": true,
+		"icon-size": 22,
         "rewrite": {
             "(.*) - Brave": "$1",
+			"(.*) - Obsidian (.*)": "$1",
             "(.*) - Chromium": "$1",
             "(.*) - Brave Search": "$1",
             "(.*) - Outlook": "$1",
@@ -63,7 +67,7 @@
 
     // System tray
     "tray": {
-        "icon-size": 20,
+        "icon-size": 16,
         "spacing": 10
     },
 
@@ -72,6 +76,7 @@
         // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 		"tooltip-format": "<tt><small>{calendar}</small></tt>",
 		"format-alt": "{:%d.%m.%Y}",
+		"format": "[{:%d] %H:%M}",
 		// "timezone": "Asia/Yekaterinburg",
 		// "locale": "de_DE.utf8",
 		"calendar": {
@@ -146,7 +151,7 @@
         "format": "{ifname}",
         //"format-wifi": " ",
 		//"format-wifi": " 󰖩 ",
-		"format-wifi": " ",
+		"format-wifi": "{essid} ",
         "format-ethernet": "󰈀 {ipaddr}",
         "format-disconnected": "Not connected",
         "tooltip-format": " {ifname} via {gwaddri}",
@@ -171,17 +176,17 @@
         "format-alt": "{icon} {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": [" ", " ", " ", " ", " "]
+        "format-icons": ["", "", "", "", ""]
     },
 
     // Pulseaudio
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume} {icon} ",
+        "format": "{volume} {icon}",
         // "format-bluetooth": "{volume}% {icon}  {format_source}",
-		"format-bluetooth": "{volume}  {icon} ",
+		"format-bluetooth": "{volume}  {icon}",
         "format-bluetooth-muted": " {icon}  {format_source}",
-        "format-muted": " ",
+        "format-muted": "",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -193,13 +198,14 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+		"on-click-right": "notify-send.sh 'Fuuu'"
 		// "on-click": "~/.config/eww/scripts/toggle_control_center.sh"
     },
 
     // Bluetooth
     "bluetooth": {
-		"format": "  ",
+		"format": "{device_alias} [{device_battery_percentage}] ",
 		//"format": " 󰂱  ",
         "format-disabled": " 󰂲 ",
         "format-off": "off",
@@ -271,3 +277,4 @@
 		"on-click": "~/.config/scripts/hypr/hyprshade-toggle.py",
 	}
 }
+
