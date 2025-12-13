@@ -4,7 +4,7 @@ CONFIG="$HOME/.ssh/config"
 
 # Проверим наличие fzf
 if ! command -v fzf &>/dev/null; then
-	echo "fzf не установлен. Установите его сначала (например: sudo apt install fzf)"
+	echo "fzf не установлен. Установи его, чтобы использовать скрипт"
 	exit 1
 fi
 
@@ -29,4 +29,8 @@ selected=$(echo "$hosts" | fzf --prompt="Выберите сервер: " | awk 
 [ -z "$selected" ] && exit 0
 
 # Подключение
-ssh -t "$selected"
+if [ "$1" == "sftp" ]; then
+	sftp "$selected"
+else
+	ssh -t "$selected"
+fi

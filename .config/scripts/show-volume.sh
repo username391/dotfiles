@@ -4,10 +4,10 @@
 volume=$(pamixer --get-volume)
 mute=$(pamixer --get-mute)
 
-bar="   $(seq -s "─" $(($volume/4)) | sed 's/[0-9]//g')  "
+bar="   $(seq -s "─" $(($volume / 4)) | sed 's/[0-9]//g')  "
 
 if [ "$mute" = "true" ]; then
-    notify-send.sh --replace-file ~/.cache/91191 "     Muted\n$bar"
+	notify-send.sh --replace-file ~/.cache/91191 "     Muted\n$bar"
 else
 
 	if [ "$volume" -le 33 ]; then

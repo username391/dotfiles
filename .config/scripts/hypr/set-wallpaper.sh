@@ -23,11 +23,10 @@ if [ -z "$filename" ]; then
 	fi
 fi
 
-
 # Если нужно сохранить файл - сохраняем
 for arg in "$@"; do
 	if [ "$arg" == "--save" ]; then
-		echo "$filename" > ~/.cache/wallpaper
+		echo "$filename" >~/.cache/wallpaper
 		break
 	fi
 done
@@ -45,4 +44,3 @@ notify-send.sh --replace-file ~/.cache/91222 "wallpaper changed" "$(basename "$f
 hyprctl hyprpaper unload all
 hyprctl "hyprpaper preload $filename"
 hyprctl "hyprpaper wallpaper ,$filename"
-

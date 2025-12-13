@@ -17,6 +17,6 @@ if [ ! -d "$1" ]; then
 fi
 
 # Получаем случайный файл
-filename=`/bin/ls $1/ | xargs -n 1 basename | shuf -n 1`
+filename=$(/bin/ls $1/ | xargs -n 1 basename | shuf -n 1)
 
 ~/.config/scripts/hypr/set-wallpaper.sh "$1/$filename" --save
