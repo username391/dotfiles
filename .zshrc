@@ -104,6 +104,8 @@ alias gd="git diff"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(ssh-agent -s)" > /dev/null
+
 
 # pacman
 # alias pacmanclean="sudo pacman -Rs $(pacman -Qtdq)"
