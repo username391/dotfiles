@@ -1,78 +1,99 @@
 /* Old colors */
 @define-color fgColor #9893a5;
 @define-color fgColorDark #191724;
-@define-color bgColor #191724;
-@define-color bgColorLight #9ccfd8;
+/* @define-color bgColor #191724; */
+/* @define-color bgColor #f53c3c; */
+/* @define-color bgColorLight #9ccfd8; */
 @define-color bgColorLight #9893a5;
 @define-color urgentColor #eb6f92; /* #f53c3c; */
 @define-color iconColor #ffffff;
 
 /* Colors from Rose Pine theme */
-@define-color surfaceColor            #1f1d2e;
-@define-color surfaceColorTransparent rgba(31, 29, 46, 0.7);
+/* @define-color surfaceColor            #1f1d2e; */
+@define-color surfaceColorTransparent rgba(31, 29, 46, 0.4);
+/* @define-color surfaceColor #ffff00; */
 @define-color overlayColor            #26233a;
+/* @define-color overlayColor #ff5300; */
 @define-color mutedColor              #6e6a86;
 @define-color subtleColor             #908caa;
 
+@define-color silverBgColor #323d49;
+@define-color text #e8eaed;
+
+
+@define-color mainBgColor #242438;
+@define-color mainFgColor #F5C2E7;
+
+@define-color fgColor1 #A9A0D7;
+@define-color fgColor2 #F5C2E7;
+@define-color fgColor3 #EBA0AC;
+@define-color fgColor4 #CBA6F7;
+@define-color fgColor5 #89DCEB;
+@define-color fgColor6 #F9E2AF;
+
+@define-color tomatoColor #f53c3c;
+
 * {
     /* font-family: "JetBrainsMono NF", */
-	font-family: "Geist Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+	/* font-family: "Geist Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif; */
+	/* font-family: "Geist Mono", sans-serif; */
+	font-family: "JetBrainsMono Nerd Font Propo", sans-serif;
+	font-weight: bold;
+	font-style: normal;
     border: none;
-    border-radius: 0px;
+    border-radius: 10px;
 }
 
 window#waybar {
-    /* background-color: rgba(0,0,0,0.2); */
-    /* background-color: rgba(0,0,0, 0.5); */
 	background-color: @surfaceColorTransparent;
     border-bottom: 0px solid @bgColor;
-    /* color: @fgColor; */
     transition-property: background-color;
     transition-duration: .5s;
 }
+
 
 /* -----------------------------------------------------
  * Workspaces 
  * ----------------------------------------------------- */
 
 #workspaces {
-    margin: 5px 1px 6px 1px;
-    padding: 0px 1px;
-    border-radius: 15px;
-    border: 0px;
-    font-weight: bold;
-    font-style: normal;
-    font-size: 16px;
-    background: @overlayColor;
+    /* margin: 5px 1px 6px 1px; */
+    /* padding: 0px 1px; */
+    /* border: 0px; */
+
+
+	padding: 0 13px;
+	margin: 5px;
+
+    background: @mainBgColor;
 }
 
 #workspaces button {
     padding: 0px 5px;
     margin: 4px 3px;
-    border-radius: 15px;
     border: 0px;
-    color: @subtleColor;
-    transition: all 0.3s ease-in-out;
+    color: @fgColor1;
+    transition: all 0.1s ease-in-out;
 }
 
 #workspaces button.active {
-    color: @fgColorDark;
-    background: @bgColorLight;
-    border-radius: 15px;
-    /* min-width: 40px; */
-    transition: all 0.3s ease-in-out;
+    color: @mainBgColor;
+    background: @fgColor1;
+    transition: all 0.1s ease-in-out;
 }
 
 #workspaces button:hover {
-    color: @bgColor;
-    background: @fgColor;
-    border-radius: 15px;
+    /* color: @bgColor; */
+    /* background: @fgColor; */
+    /* border-radius: 15px; */
+	color: @mainBgColor;
+	background-color: @fgColor3;
 }
 
 #workspaces button.urgent {
     background: @urgentColor;
     color: @fgColorDark;
-    border-radius: 15px;
+    /* border-radius: 15px; */
 }
 
 
@@ -81,11 +102,16 @@ window#waybar {
  * ----------------------------------------------------- */
 
 tooltip {
-    border-radius: 10px;
-    background-color: @bgColor;
+    /* border-radius: 10px; */
+    /* background-color: @bgColor; */
+    background-color: @mainBgColor;
     opacity:0.9;
     padding:20px;
     margin:0px;
+}
+
+#calendar {
+	background-color: @fgColor;
 }
 
 tooltip label {
@@ -100,15 +126,14 @@ tooltip label {
     background: @bgColor;
     margin: 10px 15px 10px 0px;
     padding: 2px 10px 0px 10px;
-    border-radius: 12px;
+    /* border-radius: 12px; */
     color: @fgColor;
     font-size:16px;
     font-weight:normal;
 }
 
-window#waybar.empty #window {
-    background-color:transparent;
-}
+
+
 
 /* -----------------------------------------------------
  * Taskbar
@@ -118,7 +143,7 @@ window#waybar.empty #window {
     background: @fgColor;
     margin: 6px 15px 6px 0px;
     padding:0px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     font-weight: normal;
     font-style: normal;
     border: 3px solid @bgColor;
@@ -126,7 +151,7 @@ window#waybar.empty #window {
 
 #taskbar button {
     margin:0;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     padding: 0px 5px 0px 5px;
 }
 
@@ -152,13 +177,13 @@ window#waybar.empty #window {
 #bluetooth,
 #custom-hyprshade
 {
-    margin-right: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: @subtleColor;
-	background: @overlayColor;
-    padding: 4px 10px 2px 10px;
-    font-size: 16px;
+    /* margin-right: 20px; */
+ /*    font-size: 20px; */
+ /*    font-weight: bold; */
+ /*    color: @subtleColor; */
+	/* background: @overlayColor; */
+    /* padding: 4px 10px 2px 10px; */
+    /* font-size: 16px; */
 }
 
 
@@ -166,7 +191,7 @@ window#waybar.empty #window {
 	font-size: 16px;
 	font-weight: bold;
 	color: @subtleColor;
-    padding: 4px 10px 2px 10px;
+    /* padding: 4px 10px 2px 10px; */
     margin: 11px 10px 10px 10px;
 }
 
@@ -175,9 +200,9 @@ window#waybar.empty #window {
 #custom-appmenu {
     background-color: @bgColorLight;
     color: @fgColorDark;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     margin: 10px 10px 10px 10px;
-    padding: 4px 10px 2px 10px;
+    /* padding: 4px 10px 2px 10px; */
     color: @subtleColor;
 	background: @overlayColor;
 }
@@ -188,9 +213,9 @@ window#waybar.empty #window {
 
 #custom-exit {
     margin: 2px 20px 0px 0px;
-    padding:0px;
+    /* padding:0px; */
     font-size:20px;
-    color: @iconColor;
+    color: @fgColor4;
 }
 
 /* -----------------------------------------------------
@@ -199,7 +224,7 @@ window#waybar.empty #window {
 
  #disk,#memory,#cpu{
     margin:0px;
-    padding:0px;
+    /* padding:0px; */
     font-size:16px;
     color:@fgColor;
 }
@@ -214,7 +239,7 @@ window#waybar.empty #window {
 
 #clock {
     font-size: 16px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     margin: 10px 7px 10px 0px;
 }
 
@@ -224,7 +249,7 @@ window#waybar.empty #window {
 
 #pulseaudio {
     font-size: 16px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     margin: 10px 10px 10px 0px;
 }
 
@@ -237,7 +262,7 @@ window#waybar.empty #window {
 
 #network {
     font-size: 16px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     margin: 10px 10px 10px 0px;
     font-weight: bold;
 }
@@ -257,14 +282,14 @@ window#waybar.empty #window {
  #bluetooth, #bluetooth.on, #bluetooth.connected {
     font-weight: bold;
     font-size: 16px;
-    border-radius: 15px;
-    margin: 10px 15px 10px 0px;
+    /* border-radius: 15px; */
+    /* margin: 10px 15px 10px 0px; */
 }
 
 #bluetooth.off {
-    background-color: transparent;
-    padding: 0px;
-    margin: 0px;
+    /* background-color: transparent; */
+    /* padding: 0px; */
+    /* margin: 0px; */
 }
 
 /* -----------------------------------------------------
@@ -273,7 +298,7 @@ window#waybar.empty #window {
 
 #battery {
     font-size: 16px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     margin: 10px 10px 10px 0px;
 }
 
@@ -326,7 +351,7 @@ label:focus {
 #backlight {
     font-weight: bold;
     font-size: 16px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     margin: 10px 15px 10px 0px;
 }
 
@@ -337,5 +362,92 @@ label:focus {
 #network.disconnected {
     background-color: @urgentColor;
 	color: @surfaceColor;
+}
+
+
+
+#custom-exit,
+#language, 
+#pulseaudio,
+#battery,
+#clock,
+#network,
+#tray,
+#bluetooth {
+	padding: 0 13px;
+	margin: 5px;
+}
+
+
+#pulseaudio,
+#battery,
+#tray,
+#clock,
+#network,
+#bluetooth {
+	/* background-color: @silverBgColor; */
+	background-color: @mainBgColor;
+	color: @mainFgColor;
+}
+
+#clock {
+	color: @fgColor2;
+}
+
+#clock:hover {
+	color: @mainBgColor;
+	background-color: @fgColor2;
+}
+
+#battery {
+	color: @fgColor3;
+}
+
+#battery:hover {
+	color: @mainBgColor;
+	background-color: @fgColor3;
+}
+
+#pulseaudio {
+	color: @fgColor4;
+}
+
+#pulseaudio:hover {
+	color: @mainBgColor;
+	background-color: @fgColor4;
+}
+
+#network {
+	color: @fgColor5;
+}
+
+#network:hover {
+	color: @mainBgColor;
+	background-color: @fgColor5;
+}
+
+#bluetooth {
+	color: @fgColor6;
+}
+
+
+#bluetooth:hover {
+	color: @mainBgColor;
+	background-color: @fgColor6;
+}
+
+#tray {
+	color: @fgColor1;
+}
+
+
+#custom-exit {
+	background-color: @mainBgColor;
+	color: @tomatoColor;
+}
+
+#custom-exit:hover {
+	background-color: @tomatoColor;
+	color: @mainBgColor;
 }
 
