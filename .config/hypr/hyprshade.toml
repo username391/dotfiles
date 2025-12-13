@@ -1,0 +1,7 @@
+[[shaders]]
+name = "vibrance"
+default = true
+
+[[shaders]]
+name = "blue-light-filter"
+
