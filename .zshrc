@@ -121,6 +121,17 @@ alias h='history'
 alias hg='history | grep'
 alias hgi='history | grep -i'
 
+# Tmux
+# alias att='tmux new-session -A -s'
+alias att='~/.config/scripts/tmux/att.sh'
+
+alias radio='~/.config/scripts/tmux/run-pyradio.sh'
+
+
+# SSH
+# NOTE: возможно стоит как то его переименовать
+alias sshm='~/.config/scripts/ssh-finder.sh'
+
 # bluetooth
 alias blc='bluetoothctl connect'
 alias bld='bluetoothctl disconnect'
