@@ -191,3 +191,6 @@ qBittorrent
 .config/touchpadxlibinputrc
 .config/webengineurlinterceptoradblockrc
 
+.config/polybar/inc.txt
+.config/cantorrc
+.config/kgetrc
