@@ -22,6 +22,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 # powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
+
 # Пути
 export GOPATH=$HOME/go/
 PATH=$PATH:~/.local/bin
