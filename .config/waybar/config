@@ -1,3 +1,4 @@
+// -*- mode: jsonc -*-
 {
 	"layer": "top",
 	"position": "bottom",
@@ -10,6 +11,7 @@
 	"modules-left": [
 		// "custom/appmenu",
 		"hyprland/workspaces",
+		"hyprland/window",
 	],
 	"modules-center": [
 	],
@@ -28,6 +30,7 @@
 		"network",
 		"bluetooth",
 		"tray",
-		"custom/exit"
+		"custom/exit",
+		"powermode"
 	]
 }
