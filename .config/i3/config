@@ -154,7 +154,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec --no-startup-id "echo -e 'Yes\nNo' | dmenu -l 2 -p 'Exit? ' | grep -q 'Yes' && i3-msg exit"
+bindsym $mod+Shift+e exec --no-startup-id "echo -e 'Yes\nNo' | rofi show -dmenu -l 2 -p 'Exit? ' | grep -q 'Yes' && i3-msg exit"
 
 
 bindsym $mod+$alt+h resize shrink width 10 px or 10 ppt
@@ -212,7 +212,7 @@ bindsym	$mod+Shift+Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh --
 bindsym	Shift+Print exec --no-startup-id $HOME/scripts/take_sceenshot.sh --area --clipboard
 
 # change wallpaper
-bindsym $mod+u exec --no-startup-id $HOME/scripts/set_random_wallpaper.sh $HOME/wallpapers
+bindsym $mod+u exec --no-startup-id $HOME/scripts/set_random_wallpaper.sh $HOME/__wallpapers
 
 # hide/show polybar
 bindsym $mod+t exec --no-startup-id polybar-msg cmd toggle
