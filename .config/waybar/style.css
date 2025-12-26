@@ -1,308 +1,113 @@
-/* Old colors */
-@define-color fgColor #9893a5;
-@define-color fgColorDark #191724;
-/* @define-color bgColor #191724; */
-/* @define-color bgColor #f53c3c; */
-/* @define-color bgColorLight #9ccfd8; */
-@define-color bgColorLight #9893a5;
-@define-color urgentColor #eb6f92; /* #f53c3c; */
-@define-color iconColor #ffffff;
+@import "colors.css";
 
-/* Colors from Rose Pine theme */
-/* @define-color surfaceColor            #1f1d2e; */
-@define-color surfaceColorTransparent rgba(31, 29, 46, 0.4);
-/* @define-color surfaceColor #ffff00; */
-@define-color overlayColor            #26233a;
-/* @define-color overlayColor #ff5300; */
-@define-color mutedColor              #6e6a86;
-@define-color subtleColor             #908caa;
-
-@define-color silverBgColor #323d49;
-@define-color text #e8eaed;
-
-
-@define-color mainBgColor #242438;
-@define-color mainFgColor #F5C2E7;
-
-@define-color fgColor1 #A9A0D7;
-@define-color fgColor2 #F5C2E7;
-@define-color fgColor3 #EBA0AC;
-@define-color fgColor4 #CBA6F7;
-@define-color fgColor5 #89DCEB;
-@define-color fgColor6 #F9E2AF;
-
-@define-color tomatoColor #f53c3c;
-
+/* =====================================================
+ * Global
+ * ===================================================== */
 * {
-    /* font-family: "JetBrainsMono NF", */
-	/* font-family: "Geist Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif; */
-	/* font-family: "Geist Mono", sans-serif; */
-	font-family: "JetBrainsMono Nerd Font Propo", sans-serif;
-	font-weight: bold;
-	font-style: normal;
+    font-family: "JetBrainsMono Nerd Font Propo", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
     border: none;
     border-radius: 10px;
 }
 
+/* =====================================================
+ * Waybar Window
+ * ===================================================== */
 window#waybar {
-	background-color: @surfaceColorTransparent;
-    border-bottom: 0px solid @bgColor;
-    transition-property: background-color;
-    transition-duration: .5s;
+    background-color: @surfaceColorTransparent;
+    transition: background-color .5s;
 }
 
+/* =====================================================
+ * Shared module container
+ * ===================================================== */
+#custom-exit,
+#language,
+#pulseaudio,
+#battery,
+#clock,
+#network,
+#tray,
+#bluetooth,
+#custom-swaync {
+    padding: 0 13px;
+    margin: 5px;
+    background-color: @mainBgColor;
+}
 
-/* -----------------------------------------------------
- * Workspaces 
- * ----------------------------------------------------- */
-
+/* =====================================================
+ * Workspaces
+ * ===================================================== */
 #workspaces {
-    /* margin: 5px 1px 6px 1px; */
-    /* padding: 0px 1px; */
-    /* border: 0px; */
-
-
-	padding: 0 13px;
-	margin: 5px;
-
+    padding: 0 13px;
+    margin: 5px;
     background: @mainBgColor;
 }
 
 #workspaces button {
-    padding: 0px 5px;
+    padding: 0 5px;
     margin: 4px 3px;
-    border: 0px;
     color: @fgColor1;
-    transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
 }
 
 #workspaces button.active {
     color: @mainBgColor;
     background: @fgColor1;
-    transition: all 0.1s ease-in-out;
 }
 
 #workspaces button:hover {
-    /* color: @bgColor; */
-    /* background: @fgColor; */
-    /* border-radius: 15px; */
-	color: @mainBgColor;
-	background-color: @fgColor3;
+    color: @mainBgColor;
+    background-color: @fgColor3;
 }
 
 #workspaces button.urgent {
     background: @urgentColor;
     color: @fgColorDark;
-    /* border-radius: 15px; */
 }
 
-
-/* -----------------------------------------------------
- * Tooltips
- * ----------------------------------------------------- */
-
+/* =====================================================
+ * Tooltip
+ * ===================================================== */
 tooltip {
-    /* border-radius: 10px; */
-    /* background-color: @bgColor; */
     background-color: @mainBgColor;
-    opacity:0.9;
-    padding:20px;
-    margin:0px;
-}
-
-#calendar {
-	background-color: @fgColor;
+    opacity: 0.9;
+    padding: 20px;
 }
 
 tooltip label {
     color: @fgColor;
 }
 
-/* -----------------------------------------------------
- * Window
- * ----------------------------------------------------- */
-
-#window {
-    background: @bgColor;
-    margin: 10px 15px 10px 0px;
-    padding: 2px 10px 0px 10px;
-    /* border-radius: 12px; */
-    color: @fgColor;
-    font-size:16px;
-    font-weight:normal;
-}
-
-
-
-
-/* -----------------------------------------------------
- * Taskbar
- * ----------------------------------------------------- */
-
-#taskbar {
-    background: @fgColor;
-    margin: 6px 15px 6px 0px;
-    padding:0px;
-    /* border-radius: 15px; */
-    font-weight: normal;
-    font-style: normal;
-    border: 3px solid @bgColor;
-}
-
-#taskbar button {
-    margin:0;
-    /* border-radius: 15px; */
-    padding: 0px 5px 0px 5px;
-}
-
-/* -----------------------------------------------------
- * Modules
- * ----------------------------------------------------- */
-
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 5px;
-}
-
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0px;
-}
-
-
-/* Make it BOLD*/
-#pulseaudio,
-#battery,
-#clock,
-#backlight,
-#network,
-#bluetooth,
-#custom-hyprshade
-{
-    /* margin-right: 20px; */
- /*    font-size: 20px; */
- /*    font-weight: bold; */
- /*    color: @subtleColor; */
-	/* background: @overlayColor; */
-    /* padding: 4px 10px 2px 10px; */
-    /* font-size: 16px; */
-}
-
-
-#language {
-	font-size: 16px;
-	font-weight: bold;
-	color: @subtleColor;
-    /* padding: 4px 10px 2px 10px; */
-    margin: 11px 10px 10px 10px;
-}
-
-
-
-#custom-appmenu {
-    background-color: @bgColorLight;
-    color: @fgColorDark;
-    /* border-radius: 15px; */
-    margin: 10px 10px 10px 10px;
-    /* padding: 4px 10px 2px 10px; */
-    color: @subtleColor;
-	background: @overlayColor;
-}
-
-/* -----------------------------------------------------
- * Custom Exit
- * ----------------------------------------------------- */
-
-#custom-exit {
-    margin: 2px 20px 0px 0px;
-    /* padding:0px; */
-    font-size:20px;
-    color: @fgColor4;
-}
-
-/* -----------------------------------------------------
- * Hardware Group
- * ----------------------------------------------------- */
-
- #disk,#memory,#cpu{
-    margin:0px;
-    /* padding:0px; */
-    font-size:16px;
-    color:@fgColor;
-}
-
-#language {
-    margin-right:10px;
-}
-
-/* -----------------------------------------------------
+/* =====================================================
  * Clock
- * ----------------------------------------------------- */
-
+ * ===================================================== */
 #clock {
-    font-size: 16px;
-    /* border-radius: 15px; */
-    margin: 10px 7px 10px 0px;
+    color: @fgColor2;
 }
 
-/* -----------------------------------------------------
- * Pulseaudio
- * ----------------------------------------------------- */
-
-#pulseaudio {
-    font-size: 16px;
-    /* border-radius: 15px; */
-    margin: 10px 10px 10px 0px;
+#clock:hover {
+    background-color: @fgColor2;
+    color: @mainBgColor;
 }
 
-#pulseaudio.muted {
-}
-
-/* -----------------------------------------------------
- * Network
- * ----------------------------------------------------- */
-
-#network {
-    font-size: 16px;
-    /* border-radius: 15px; */
-    margin: 10px 10px 10px 0px;
-    font-weight: bold;
-}
-
-#network.ethernet {
-}
-
-#network.wifi {
-	min-width: 38px;
-    font-size: 16px;
-}
-
-/* -----------------------------------------------------
- * Bluetooth
- * ----------------------------------------------------- */
-
- #bluetooth, #bluetooth.on, #bluetooth.connected {
-    font-weight: bold;
-    font-size: 16px;
-    /* border-radius: 15px; */
-    /* margin: 10px 15px 10px 0px; */
-}
-
-#bluetooth.off {
-    /* background-color: transparent; */
-    /* padding: 0px; */
-    /* margin: 0px; */
-}
-
-/* -----------------------------------------------------
+/* =====================================================
  * Battery
- * ----------------------------------------------------- */
-
+ * ===================================================== */
 #battery {
-    font-size: 16px;
-    /* border-radius: 15px; */
-    margin: 10px 10px 10px 0px;
+    color: @fgColor3;
 }
 
-#battery.charging, #battery.plugged {
+#battery:hover {
+    background-color: @fgColor3;
+    color: @mainBgColor;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @urgentColor;
+    color: @fgColorDark;
+    animation: blink .5s linear infinite alternate;
 }
 
 @keyframes blink {
@@ -312,22 +117,53 @@ tooltip label {
     }
 }
 
-#battery.critical:not(.charging) {
-    background-color: @urgentColor;
-    color: @fgColorDark;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+/* =====================================================
+ * Pulseaudio
+ * ===================================================== */
+#pulseaudio {
+    color: @fgColor4;
 }
 
-/* -----------------------------------------------------
- * Tray
- * ----------------------------------------------------- */
+#pulseaudio:hover,
+#custom-swaync:hover {
+    background-color: @fgColor4;
+    color: @mainBgColor;
+}
 
+/* =====================================================
+ * Network
+ * ===================================================== */
+#network {
+    color: @fgColor5;
+}
+
+#network:hover {
+    background-color: @fgColor5;
+    color: @mainBgColor;
+}
+
+#network.disconnected {
+    background-color: @urgentColor;
+    color: @surfaceColor;
+}
+
+/* =====================================================
+ * Bluetooth
+ * ===================================================== */
+#bluetooth {
+    color: @fgColor6;
+}
+
+#bluetooth:hover {
+    background-color: @fgColor6;
+    color: @mainBgColor;
+}
+
+/* =====================================================
+ * Tray
+ * ===================================================== */
 #tray {
-    margin:0px 10px -3px 0px;
+    color: @fgColor1;
 }
 
 #tray > .passive {
@@ -335,119 +171,26 @@ tooltip label {
 }
 
 #tray > .needs-attention {
+    background-color: @urgentColor;
     -gtk-icon-effect: highlight;
-    background-color: @urgentColor;
-
 }
 
-/* -----------------------------------------------------
- * Other
- * ----------------------------------------------------- */
-
-label:focus {
-    background-color: #000000;
-}
-
-#backlight {
-    font-weight: bold;
-    font-size: 16px;
-    /* border-radius: 15px; */
-    margin: 10px 15px 10px 0px;
-}
-
-
-#network {
-}
-
-#network.disconnected {
-    background-color: @urgentColor;
-	color: @surfaceColor;
-}
-
-
-
-#custom-exit,
-#language, 
-#pulseaudio,
-#battery,
-#clock,
-#network,
-#tray,
-#bluetooth {
-	padding: 0 13px;
-	margin: 5px;
-}
-
-
-#pulseaudio,
-#battery,
-#tray,
-#clock,
-#network,
-#bluetooth {
-	/* background-color: @silverBgColor; */
-	background-color: @mainBgColor;
-	color: @mainFgColor;
-}
-
-#clock {
-	color: @fgColor2;
-}
-
-#clock:hover {
-	color: @mainBgColor;
-	background-color: @fgColor2;
-}
-
-#battery {
-	color: @fgColor3;
-}
-
-#battery:hover {
-	color: @mainBgColor;
-	background-color: @fgColor3;
-}
-
-#pulseaudio {
-	color: @fgColor4;
-}
-
-#pulseaudio:hover {
-	color: @mainBgColor;
-	background-color: @fgColor4;
-}
-
-#network {
-	color: @fgColor5;
-}
-
-#network:hover {
-	color: @mainBgColor;
-	background-color: @fgColor5;
-}
-
-#bluetooth {
-	color: @fgColor6;
-}
-
-
-#bluetooth:hover {
-	color: @mainBgColor;
-	background-color: @fgColor6;
-}
-
-#tray {
-	color: @fgColor1;
-}
-
-
+/* =====================================================
+ * Custom modules
+ * ===================================================== */
 #custom-exit {
-	background-color: @mainBgColor;
-	color: @tomatoColor;
+    color: @tomatoColor;
 }
 
 #custom-exit:hover {
-	background-color: @tomatoColor;
-	color: @mainBgColor;
+    background-color: @tomatoColor;
+    color: @mainBgColor;
 }
 
+#custom-pomodoro {
+    color: @fgColor2;
+}
+
+#custom-pomodoro:hover {
+    color: @fgColor3;
+}

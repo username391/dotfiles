@@ -1,0 +1,40 @@
+/* =====================================================
+ * Base / Legacy
+ * ===================================================== */
+@define-color fgColor            #9893a5;
+@define-color fgColorDark        #191724;
+@define-color bgColorLight       #9893a5;
+@define-color urgentColor        #eb6f92;
+@define-color iconColor          #ffffff;
+
+/* =====================================================
+ * Rose Pine based
+ * ===================================================== */
+@define-color surfaceColorTransparent rgba(31, 29, 46, 0.4);
+@define-color overlayColor       #26233a;
+@define-color mutedColor         #6e6a86;
+@define-color subtleColor        #908caa;
+
+/* =====================================================
+ * Main theme
+ * ===================================================== */
+@define-color mainBgColor        #242438;
+@define-color mainFgColor        #F5C2E7;
+
+/* =====================================================
+ * Accents
+ * ===================================================== */
+@define-color fgColor1           #A9A0D7;
+@define-color fgColor2           #F5C2E7;
+@define-color fgColor3           #EBA0AC;
+@define-color fgColor4           #CBA6F7;
+@define-color fgColor5           #89DCEB;
+@define-color fgColor6           #F9E2AF;
+
+@define-color tomatoColor        #f53c3c;
+@define-color silverBgColor      #323d49;
+
+/* =====================================================
+ * Text
+ * ===================================================== */
+@define-color text               #e8eaed;
