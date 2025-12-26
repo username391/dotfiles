@@ -11,6 +11,7 @@
 	"modules-left": [
 		// "custom/appmenu",
 		"hyprland/workspaces",
+		"custom/pomodoro",
 		"hyprland/window",
 	],
 	"modules-center": [
@@ -31,6 +32,8 @@
 		"bluetooth",
 		"tray",
 		"custom/exit",
-		"powermode"
+		"powermode",
+
+		"custom/swaync"
 	]
 }

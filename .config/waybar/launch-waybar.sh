@@ -14,8 +14,10 @@ fi
 trap "killall waybar" EXIT
 
 while true; do
-	killall waybar
+	killall -9 waybar &
+	killall -9 swaync &
 	sleep 0.5
 	waybar &
+	swaync &
 	inotifywait -e create,modify "${CONFIG_FILES[@]}"
 done

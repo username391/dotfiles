@@ -44,7 +44,7 @@
     "custom/exit": {
         "format": "",
         "tooltip-format": "Powermenu",
-        "on-click": "wlogout -b 3",
+        "on-click": "wlogout -b 6",
         "tooltip": false
     },
 
@@ -62,7 +62,7 @@
 
 	"custom/kb": {
 		"exec": "~/.config/scripts/hypr/get-kb.sh",
-		"interval": 1,
+		"interval": 1
 	},
 
     // System tray
@@ -274,7 +274,35 @@
 		"interval": 5,
 		"tooltip": false,
 		"exec-on-event": false,
-		"on-click": "~/.config/scripts/hypr/hyprshade-toggle.py",
+		"on-click": "~/.config/scripts/hypr/hyprshade-toggle.py"
+	},
+	"custom/pomodoro": {
+		"format": "{}",
+		"return-type": "json",
+		"exec": "waybar-module-pomodoro",
+		"on-click": "waybar-module-pomodoro toggle",
+		"on-click-right": "waybar-module-pomodoro reset"
+	},
+
+	"custom/swaync": {
+		"tooltip":true,     
+		"format": "{icon} {text}",
+		"format-icons": {
+		  "notification": "<span foreground='red'><sup></sup></span>",
+		  "none": "",
+		  "dnd-notification": "<span foreground='red'><sup></sup></span>",
+		  "dnd-none": "",
+		  "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+		  "inhibited-none": "",
+		  "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+		  "dnd-inhibited-none": ""
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "sleep 0.1 && swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
 	}
 }
 
