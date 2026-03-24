@@ -163,6 +163,7 @@ qBittorrent
 .config/io.datasette.llm/
 .config/nextjs-nodejs/
 .config/uncover/
+.config/ibus/
 
 
 .config/X-Cinnamon-xdg-terminals.list
@@ -194,3 +195,12 @@ qBittorrent
 .config/polybar/inc.txt
 .config/cantorrc
 .config/kgetrc
+
+
+.config/PE-bear/
+.config/ai.opencode.desktop/
+.config/fcitx5/
+.config/ghidra/
+.config/guvcview2/
+.config/rustdesk/
+.config/wal/
