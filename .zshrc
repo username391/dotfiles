@@ -204,3 +204,9 @@ alias nay='proxychains4 yay'
 
 # opencode
 export PATH=/home/me/.opencode/bin:$PATH
+
+
+alias tg='python ~/projects/telegram-bot-extractor/tg.py'
+alias newp='python ~/.config/scripts/misc/new-project.py'
+
+
