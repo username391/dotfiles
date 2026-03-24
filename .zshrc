@@ -199,5 +199,8 @@ alias p='~/scripts/download-video.py'
 alias o='~/scripts/opener.py'
 alias rms='~/scripts/shred-remove.sh'
 
+# yay + proxychains
+alias nay='proxychains4 yay'
+
 # opencode
 export PATH=/home/me/.opencode/bin:$PATH
