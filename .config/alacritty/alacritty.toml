@@ -12,19 +12,19 @@ background = "#26233a"
 size = 15
 
 [font.bold]
-family = "Hermit"
+family = "JetBrains Mono NF"
 style = "Bold"
 
 [font.bold_italic]
-family = "Hermit"
+family = "JetBrains Mono NF"
 style = "Bold Italic"
 
 [font.italic]
-family = "Hermit"
+family = "JetBrains Mono NF"
 style = "Italic"
 
 [font.normal]
-family = "Hermit"
+family = "JetBrains Mono NF"
 style = "Regular"
 
 [[keyboard.bindings]]
@@ -49,8 +49,8 @@ multiplier = 3
 [selection]
 save_to_clipboard = false
 
-[shell]
-program = "/usr/bin/zsh"
+[terminal]
+shell = "/usr/bin/zsh"
 
 [window]
 decorations = "full"
