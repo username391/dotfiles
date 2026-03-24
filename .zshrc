@@ -30,6 +30,7 @@ typeset -g POWERLEVEL9K_CURSOR_SHAPE=block
 # Пути
 export GOPATH=$HOME/go/
 PATH=$PATH:~/.local/bin
+export PATH=$PATH:$HOME/go/bin
 
 # Плагины
 zinit light zsh-users/zsh-syntax-highlighting
