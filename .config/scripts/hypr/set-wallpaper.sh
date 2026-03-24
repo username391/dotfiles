@@ -41,6 +41,11 @@ fi
 notify-send.sh --replace-file ~/.cache/91222 "wallpaper changed" "$(basename "$filename")" -i "image-jpeg" -a "wallpaper-change"
 
 # Устанавливаем обои
-hyprctl hyprpaper unload all
-hyprctl "hyprpaper preload $filename"
-hyprctl "hyprpaper wallpaper ,$filename"
+# hyprctl hyprpaper unload all
+# hyprctl "hyprpaper preload $filename"
+# hyprctl "hyprpaper wallpaper ,$filename"
+
+# hyprctl hyprpaper wallpaper '[mon], [path], [fit_mode]'
+hyprctl hyprpaper wallpaper ,$filename
+
+wal -i $filename -s -t
