@@ -110,6 +110,9 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(ssh-agent -s)" > /dev/null
 
+# lf integration
+source ~/.config/lf/lfcd.sh
+
 
 # pacman
 # alias pacmanclean="sudo pacman -Rs $(pacman -Qtdq)"
