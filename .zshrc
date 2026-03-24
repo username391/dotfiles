@@ -25,6 +25,8 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit ice depth=1
 zinit light jeffreytse/zsh-vi-mode
 
+typeset -g POWERLEVEL9K_CURSOR_SHAPE=block
+
 # Пути
 export GOPATH=$HOME/go/
 PATH=$PATH:~/.local/bin
