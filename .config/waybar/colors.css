@@ -10,7 +10,8 @@
 /* =====================================================
  * Rose Pine based
  * ===================================================== */
-@define-color surfaceColorTransparent rgba(31, 29, 46, 0.4);
+/* @define-color surfaceColorTransparent rgba(31, 29, 46, 0.4); */
+@define-color surfaceColorTransparent rgba(31, 29, 46, 0.0);
 @define-color overlayColor       #26233a;
 @define-color mutedColor         #6e6a86;
 @define-color subtleColor        #908caa;

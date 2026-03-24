@@ -5,11 +5,15 @@
  * ===================================================== */
 * {
     font-family: "JetBrainsMono Nerd Font Propo", sans-serif;
-    font-size: 14px;
+	/* font-family: "FantasqueSansM Nerd Font Mono", "JetBrainsMono Nerd Font Propo", sans-serif; */
+
+    font-size: 12px;
     font-weight: bold;
     border: none;
     border-radius: 10px;
 }
+
+
 
 /* =====================================================
  * Waybar Window
@@ -34,6 +38,12 @@ window#waybar {
     padding: 0 13px;
     margin: 5px;
     background-color: @mainBgColor;
+	color: @fgColor;
+}
+
+
+#language {
+    background-color: @surfaceColorTransparent;
 }
 
 /* =====================================================

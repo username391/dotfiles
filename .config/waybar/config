@@ -2,7 +2,7 @@
 {
 	"layer": "top",
 	"position": "bottom",
-	"height": 48,
+	"height": 40,
 	"spacing": 3,
 
 	"include": [
@@ -31,8 +31,8 @@
 		"network",
 		"bluetooth",
 		"tray",
-		"custom/exit",
-		"powermode",
+		//"custom/exit",
+		//"powermode",
 
 		"custom/swaync"
 	]
