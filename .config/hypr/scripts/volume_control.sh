@@ -56,16 +56,17 @@ get_icon() {
 
 # Notify
 notify_user() {
-	if [[ "$(get_volume)" == "Muted" ]]; then
-		notify-send -e -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" "Volume: Muted"
-	else
-		notify-send -e \
-			-h string:x-canonical-private-synchronous:volume_notif \
-			-u low -i "$(get_icon)" \
-			"Volume: $(get_volume)"
-
-		"$sDIR/sounds.sh" --volume >/dev/null 2>&1 || true
-	fi
+	# NOTE: disabled, noctalia does this
+	# if [[ "$(get_volume)" == "Muted" ]]; then
+	# 	notify-send -e -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" "Volume: Muted"
+	# else
+	# 	notify-send -e \
+	# 		-h string:x-canonical-private-synchronous:volume_notif \
+	# 		-u low -i "$(get_icon)" \
+	# 		"Volume: $(get_volume)"
+	#
+	# 	"$sDIR/sounds.sh" --volume >/dev/null 2>&1 || true
+	# fi
 }
 
 # Increase Volume
