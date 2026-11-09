@@ -53,6 +53,6 @@ fi
 # hyprctl hyprpaper wallpaper '[mon], [path], [fit_mode]'
 # hyprctl hyprpaper wallpaper ,$filename
 
-swww img "$filename" --transition-type="wipe" --transition-duration="0.5"
+awww img "$filename" --transition-type="wipe" --transition-duration="0.5"
 
 # wal -i $filename -s -t

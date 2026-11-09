@@ -48,7 +48,7 @@ fi
 
 # Устанавливаем обои
 if [ "$engine" == "swww" ]; then
-	swww img "$filename" --transition-type="wipe" --transition-duration="0.5"
+	awww img "$filename" --transition-type="wipe" --transition-duration="0.5"
 fi
 
 if [ "$engine" == "hyprpaper" ]; then
@@ -64,4 +64,6 @@ fi
 
 # else -> notify send no engine!
 
-wal -i $filename -s -t
+if command -v wal >/dev/null 2>&1; then
+	wal -i "$filename" -s -t
+fi

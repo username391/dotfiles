@@ -20,6 +20,7 @@
  * Main theme
  * ===================================================== */
 @define-color mainBgColor        #242438;
+@define-color mainBgColorGlass   rgba(36, 36, 56, 0.55);
 @define-color mainFgColor        #F5C2E7;
 
 /* =====================================================

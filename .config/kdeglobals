@@ -140,16 +140,18 @@ DirSelectDialog Size=982,656
 History Items[$e]=file:$HOME/work/wb-reviews-parser,file:$HOME/Desktop/kwork,file:$HOME/Desktop/kwork,file:$HOME/Desktop/New Folder
 
 [General]
-ColorSchemeHash=2c3f86428c11011a7c64ee1e7f47c274d498ff10
+ColorSchemeHash=27363f5706202c1c8261fbda7381ddaab8ad48f3
 TerminalApplication=alacritty
 TerminalService=Alacritty.desktop
 
 [Icons]
-Theme=Yaru-blue
+Theme=Papirus-Yaru-dark
 
 [KDE]
 AnimationDurationFactor=0.25
 LookAndFeelPackage=org.kde.breezedark.desktop
+contrast=4
+frameContrast=0.2
 widgetStyle=Breeze
 
 [KFileDialog Settings]

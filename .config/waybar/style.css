@@ -37,7 +37,7 @@ window#waybar {
 #custom-swaync {
     padding: 0 13px;
     margin: 5px;
-    background-color: @mainBgColor;
+    background-color: @mainBgColorGlass;
 	color: @fgColor;
 }
 
@@ -52,7 +52,7 @@ window#waybar {
 #workspaces {
     padding: 0 13px;
     margin: 5px;
-    background: @mainBgColor;
+    background: @mainBgColorGlass;
 }
 
 #workspaces button {

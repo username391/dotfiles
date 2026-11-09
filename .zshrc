@@ -2,9 +2,21 @@ export GTK_THEME=Catppuccin-Mocha-Standard-Blue-Dark
 export XDG_CURRENT_DESKTOP=Hyprland
 export EDITOR=nvim
 
-# transient prompt
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# Тема приглашения: "eastwood" (текущая) или "p10k" (старая)
+# Быстрое переключение без редактирования файла:
+#   ZSH_PROMPT_STYLE=p10k zsh
+ZSH_PROMPT_STYLE="${ZSH_PROMPT_STYLE:-eastwood}"
+
+# Import proxy environment from systemd
+export HTTP_PROXY="$(systemctl --user show-environment | sed -n 's/^HTTP_PROXY=//p')"
+export HTTPS_PROXY="$(systemctl --user show-environment | sed -n 's/^HTTPS_PROXY=//p')"
+export NO_PROXY="$(systemctl --user show-environment | sed -n 's/^NO_PROXY=//p')"
+
+# transient prompt (только для p10k)
+if [[ "$ZSH_PROMPT_STYLE" == p10k ]]; then
+  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  fi
 fi
 
 # Устанавливаем директорию для zinit и плагинов
@@ -20,7 +32,9 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # powerlevel10k
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+if [[ "$ZSH_PROMPT_STYLE" == p10k ]]; then
+  zinit ice depth=1; zinit light romkatv/powerlevel10k
+fi
 
 zinit ice depth=1
 zinit light jeffreytse/zsh-vi-mode
@@ -49,7 +63,43 @@ autoload -U compinit && compinit
 zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [[ "$ZSH_PROMPT_STYLE" == p10k ]]; then
+  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+fi
+
+# --- Eastwood (тема из oh-my-zsh, без установки oh-my-zsh) ---
+if [[ "$ZSH_PROMPT_STYLE" == eastwood ]]; then
+  autoload -Uz colors && colors
+  setopt prompt_subst
+
+  # Зависимости темы, которые обычно даёт oh-my-zsh
+  git_current_branch() {
+    local ref
+    ref=$(git symbolic-ref --quiet --short HEAD 2>/dev/null) ||
+      ref=$(git rev-parse --short HEAD 2>/dev/null) || return
+    print -r -- "$ref"
+  }
+  parse_git_dirty() {
+    if [[ -n "$(git status --porcelain 2>/dev/null)" ]]; then
+      print -r -- "$ZSH_THEME_GIT_PROMPT_DIRTY"
+    else
+      print -r -- "$ZSH_THEME_GIT_PROMPT_CLEAN"
+    fi
+  }
+
+  # Скачиваем только файл темы — это не установка oh-my-zsh
+  EASTWOOD_THEME="${XDG_DATA_HOME:-$HOME/.local/share}/zsh-themes/eastwood.zsh-theme"
+  if [[ ! -f "$EASTWOOD_THEME" ]]; then
+    mkdir -p "${EASTWOOD_THEME:h}"
+    curl -fsSL -o "$EASTWOOD_THEME" \
+      https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/themes/eastwood.zsh-theme
+  fi
+  source "$EASTWOOD_THEME"
+fi
+
+# Быстрое переключение темы
+alias theme-eastwood='ZSH_PROMPT_STYLE=eastwood exec zsh'
+alias theme-p10k='ZSH_PROMPT_STYLE=p10k exec zsh'
 
 
 # Комбинации клавиш
