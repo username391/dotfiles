@@ -56,15 +56,17 @@
 
 -- Autostart
 hl.on("hyprland.start", function()
-	hl.exec_cmd("$HOME/.config/waybar/launch-waybar.sh")
-	hl.exec_cmd("swaync &")
+	-- Noctalia is the shell: bottom bar, control center, notifications.
+	-- Waybar and swaync are no longer started.
+	hl.exec_cmd("noctalia -d")
 	-- hl.exec_cmd("hyprpaper &")
 	hl.exec_cmd("keepassxc")
 	hl.exec_cmd("hiddify")
 	hl.exec_cmd("udiskie")
 	hl.exec_cmd("hypridle")
 	-- hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
-	hl.exec_cmd("awww-daemon --format argb")
+	-- awww is replaced by Noctalia's built-in wallpaper renderer.
+	-- hl.exec_cmd("awww-daemon --format argb")
 	hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	-- hl.exec_cmd("dbus-update-activation-environment --all")
@@ -78,21 +80,21 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 	hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 
-	-- awww-daemon спавнится асинхронно: ждём его сокет, потом восстанавливаем обои
-	hl.exec_cmd(
-		"for i in $(seq 1 50); do awww query >/dev/null 2>&1 && break; sleep 0.1; done; $HOME/.config/hypr/scripts/set-wallpaper-swww.sh --load"
-	)
-	hl.exec_cmd("$HOME/.config/hypr/scripts/hyprshade.py --restore")
+	-- awww больше не используется: обои рендерит и восстанавливает Noctalia.
+	-- hl.exec_cmd(
+	-- 	"for i in $(seq 1 50); do awww query >/dev/null 2>&1 && break; sleep 0.1; done; $HOME/.config/hypr/scripts/set-wallpaper-swww.sh --load"
+	-- )
+	-- hl.exec_cmd("$HOME/.config/hypr/scripts/hyprshade.py --restore")
 	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 20")
 end)
 
 -- Exec (run every reload)
 hl.on("config.reloaded", function()
-	hl.exec_cmd("$HOME/.config/scripts/check-btc-seeds.py 5")
+	-- hl.exec_cmd("$HOME/.config/scripts/check-btc-seeds.py 5")
 
 	-- config.reloaded срабатывает и при первичной загрузке конфига, когда IPC
 	-- Hyprland ещё не поднят. Применяем состояние сессии только на реальном reload.
-	hl.exec_cmd(
-		"hyprctl monitors >/dev/null 2>&1 && { $HOME/.config/hypr/scripts/hyprshade.py --restore; $HOME/.config/hypr/scripts/set-wallpaper-swww.sh --load; hyprctl setcursor Bibata-Modern-Classic 20; }"
-	)
+	-- hl.exec_cmd(
+	-- "hyprctl monitors >/dev/null 2>&1 && { $HOME/.config/hypr/scripts/hyprshade.py --restore; hyprctl setcursor Bibata-Modern-Classic 20; }"
+	-- )
 end)

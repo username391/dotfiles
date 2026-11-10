@@ -1,0 +1,108 @@
+# Noctalia is the desktop shell now (replaces Waybar and swaync).
+#
+# Kept from the previous setup:
+#   hypridle/hyprlock -> idle + lock screen
+#   cliphist          -> clipboard history
+# Noctalia itself now owns: bottom bar + control center + notifications + wallpaper.
+#
+# Noctalia's bar is docked to the bottom edge, like the old Waybar bar.
+
+[shell]
+font_family       = "JetBrainsMono Nerd Font Propo"
+time_format       = "{:%H:%M}"
+date_format       = "%a %d %b"
+clipboard_enabled = true    # Noctalia clipboard history powers the bar widget
+
+[shell.panel]
+transparency_mode              = "glass"   # solid | soft | glass
+borders                        = true
+shadow                         = true
+control_center_placement       = "attached" # opens above the bottom bar
+open_near_click_control_center = true       # opens next to the clicked bar item
+
+# Blur behind the control center (Noctalia's own renderer, not compositor blur).
+[backdrop]
+enabled        = true
+blur_intensity = 0.6
+tint_intensity = 0.25
+
+# Bottom bar, docked edge-to-edge (no floating pill, no rounded corners).
+[bar.main]
+position           = "bottom"
+thickness          = 34
+background_opacity = 0.88
+compositor_blur    = true
+radius             = 0
+margin_ends        = 0
+margin_edge        = 0
+padding            = 12
+widget_spacing     = 6
+scale              = 1.0
+font_scale         = 1.0
+shadow             = false
+auto_hide          = false
+reserve_space      = true
+capsule            = false
+
+start  = ["workspaces"]
+center = ["clipboard"]
+end    = ["keyboard_layout", "screenshot", "clock", "volume", "battery", "network", "tray", "notifications", "control-center"]
+
+# Only show workspaces that have windows.
+[widget.workspaces]
+hide_when_empty   = true
+show_all_outputs  = false
+show_icons        = true
+show_labels       = true
+
+# Time by default; click opens the control-center calendar (date on click).
+[widget.clock]
+format         = "{:%H:%M}"
+tooltip_format = "{:%A, %B %d, %Y}"
+
+# Language indicator: short code + icon.
+[widget.keyboard_layout]
+display                 = "short"
+show_glyph              = true
+show_label              = true
+hide_when_single_layout = false
+
+# Bell is hidden when there are no unread notifications.
+[widget.notifications]
+hide_when_no_unread = true
+
+# Noctalia owns notifications now; swaync is stopped.
+[notification]
+enable_daemon       = true
+show_app_name       = true
+show_actions        = true
+keep_dismissed_in_history = true
+follow_focused_output = true   # toast on the monitor you're using
+
+# Do not show the Caps Lock / Num Lock / Scroll Lock OSD.
+# Caps Lock is used for keyboard-layout switching, and the lock-state
+# popup was appearing on every layout change.
+[osd.kinds]
+lock_keys = false
+keyboard_layout = true
+
+# Noctalia owns the wallpaper now; awww is no longer autostarted.
+[wallpaper]
+enabled   = true
+directory = "/home/me/__wallpapers"
+fill_mode = "crop"
+
+# No Noctalia dock; the bar and desktop own that space.
+[dock]
+enabled = false
+
+# hyprlock owns the lock screen.
+[lockscreen]
+enabled = false
+
+# hypridle owns idle; make sure Noctalia's idle behaviors stay off.
+[idle.behavior.lock]
+enabled = false
+
+[idle.behavior.screen-off]
+enabled = false

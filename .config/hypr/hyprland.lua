@@ -20,7 +20,7 @@ local terminal = "kitty"
 
 local fileManager = "nautilus"
 
-local menu = "pkill rofi || rofi -show drun -modi drun,filebrowser,run,window -icon-theme Papirus"
+local menu = "noctalia msg panel-toggle launcher"
 
 local logoutManager = "wlogout"
 
@@ -102,3 +102,6 @@ hl.config({
 -- windowrulev2 = noinitialfocus,class:^jetbrains-(?!toolbox),floating:1
 
 -- windowrulev2 = nofocus,class:^jetbrains-(?!toolbox),floating:1
+
+-- For Noctalia Color templates
+require("noctalia").apply_theme()

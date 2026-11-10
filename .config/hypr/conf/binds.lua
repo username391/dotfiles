@@ -24,7 +24,7 @@ local terminal = "kitty"
 
 local fileManager = "dolphin"
 
-local menu = "pkill rofi || rofi -show drun -modi drun,filebrowser,run,window -icon-theme Papirus-Yaru-dark"
+local menu = "noctalia msg panel-toggle launcher"
 
 local logoutManager = "wlogout"
 
@@ -46,6 +46,9 @@ hl.bind(mainMod .. " + " .. "V", hl.dsp.window.float())
 
 hl.bind(mainMod .. " + " .. "P", hl.dsp.exec_cmd(menu))
 
+-- Super+O: Noctalia window switcher (all windows).
+hl.bind(mainMod .. " + " .. "O", hl.dsp.exec_cmd("noctalia msg window-switcher all"))
+
 hl.bind(mainMod .. " + " .. "R", hl.dsp.window.pseudo())
 
 -- dwindle
@@ -57,7 +60,7 @@ hl.bind(mainMod .. " + " .. "R", hl.dsp.window.pseudo())
 
 hl.bind(mainMod .. " + " .. "Y", hl.dsp.exec_cmd("sh " .. os.getenv("HOME") .. "/.config/scripts/close.sh"))
 
-hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd("sh " .. os.getenv("HOME") .. "/.config/waybar/launch-waybar.sh"))
+hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd("sh -c 'noctalia msg panel-close >/dev/null 2>&1; noctalia msg bar-toggle'"))
 
 hl.bind(
 	mainMod .. " + " .. "B",
@@ -83,11 +86,11 @@ hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "M", hl.dsp.exit())
 
 hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "L", hl.dsp.exec_cmd(lock_script))
 
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "U", hl.dsp.exec_cmd(random_wallpaper_script))
+hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "U", hl.dsp.exec_cmd("noctalia msg wallpaper-random"))
 
 hl.bind(
 	mainMod .. " + " .. "U",
-	hl.dsp.exec_cmd("sh " .. os.getenv("HOME") .. "/.config/hypr/scripts/select-wallpaper.sh")
+	hl.dsp.exec_cmd("noctalia msg panel-toggle wallpaper")
 )
 
 -- Temporary
