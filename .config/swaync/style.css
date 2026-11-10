@@ -1,4 +1,6 @@
 /* @import '../../../.cache/wal/colors-waybar.css'; */
-@import 'themes/colors.css';
+/* themes/colors.css does not exist in this tree; colors are defined in the
+   theme files below. Keep this commented to avoid a failed GTK import. */
+/* @import 'themes/colors.css'; */
 @import 'themes/nova-dark/notifications.css';
 @import 'themes/nova-dark/central_control.css';

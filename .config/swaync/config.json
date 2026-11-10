@@ -38,6 +38,7 @@
     "widgets": [
         "buttons-grid",
         "volume",
+        "backlight",
         "scripts",
         "mpris",
         "title",
@@ -62,32 +63,42 @@
             "label": "󰕾",
             "show-per-app": false
         },
+        "backlight": {
+            "label": "󰃠",
+            "device": "amdgpu_bl1",
+            "subsystem": "backlight"
+        },
         "buttons-grid": {
+            "buttons-per-row": 3,
             "actions": [
                 {
-                    "label": " ",
-                    "command": "amixer set Master toggle"
-                },
-                {
-                    "label": "",
-                    "command": "amixer set Capture toggle"
-                },
-                {
-                    "label": " ",
-                    "command": "nm-connection-editor"
+                    "label": "󰖩",
+                    "type": "toggle",
+                    "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
+                    "update-command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
                 },
                 {
                     "label": "󰂯",
-                    "command": "blueman-manager",
-                    "active": true,
-                    "update-command": "echo true"
+                    "type": "toggle",
+                    "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && bluetoothctl power on || bluetoothctl power off'",
+                    "update-command": "sh -c 'bluetoothctl show | grep -q \"Powered: yes\" && echo true || echo false'"
                 },
                 {
-                    "label": "󰏘",
-                    "command": "nwg-look"
+                    "label": "󰒓",
+                    "command": "blueman-manager"
                 },
                 {
-                    "label": "",
+                    "label": "󰍬",
+                    "type": "toggle",
+                    "command": "sh -c 'amixer set Capture toggle'",
+                    "update-command": "sh -c 'amixer sget Capture | grep -q \"\\[on\\]\" && echo true || echo false'"
+                },
+                {
+                    "label": "󰄀",
+                    "command": "~/.config/swaync/scripts/screenshot.sh"
+                },
+                {
+                    "label": "󰐥",
                     "command": "wlogout -b 5"
                 }
             ]
