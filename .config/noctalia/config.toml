@@ -184,10 +184,6 @@ enabled           = true
 temperature_day   = 4600
 temperature_night = 4900
 
-# Weather location.
-[location]
-address = "Birsk, Russia"
-
 # Hot corner: top-left opens the window switcher.
 [hot_corners]
 enabled = true
