@@ -6,19 +6,38 @@
 # Noctalia itself now owns: bottom bar + control center + notifications + wallpaper.
 #
 # Noctalia's bar is docked to the bottom edge, like the old Waybar bar.
+#
+# Config layering note: changes made through the Settings UI / IPC are written
+# to ~/.local/state/noctalia/settings.toml, which loads AFTER this file and
+# wins on conflicts. On 2026-11-11 every override that had accumulated there
+# was folded into this file and the state layer was cleared, so this config is
+# the single source of truth again. New GUI tweaks will land in settings.toml
+# and override this file — fold them in the same way when you want them kept
+# in the dotfiles. (`noctalia config export` prints the merged result.)
 
 [shell]
 font_family       = "JetBrainsMono Nerd Font Propo"
 time_format       = "{:%H:%M}"
 date_format       = "%a %d %b"
 clipboard_enabled = true    # Noctalia clipboard history powers the bar widget
+avatar_path       = "/home/me/Pictures/avatar.jpg"
+
+[shell.launcher]
+# Launcher categories show icons only.
+category_icons_only = true
 
 [shell.panel]
-transparency_mode              = "glass"   # solid | soft | glass
+transparency_mode              = "glass"    # solid | soft | glass
 borders                        = true
 shadow                         = true
 control_center_placement       = "attached" # opens above the bottom bar
 open_near_click_control_center = true       # opens next to the clicked bar item
+clipboard_placement            = "attached"
+open_near_click_clipboard      = true
+
+[shell.screenshot]
+annotate    = true
+show_cursor = true
 
 # Blur behind the control center (Noctalia's own renderer, not compositor blur).
 [backdrop]
@@ -26,10 +45,10 @@ enabled        = true
 blur_intensity = 0.6
 tint_intensity = 0.25
 
-# Bottom bar, docked edge-to-edge (no floating pill, no rounded corners).
+# Bottom bar, docked edge-to-edge; widgets sit inside a translucent capsule.
 [bar.main]
 position           = "bottom"
-thickness          = 34
+thickness          = 35
 background_opacity = 0.88
 compositor_blur    = true
 radius             = 0
@@ -38,15 +57,17 @@ margin_edge        = 0
 padding            = 12
 widget_spacing     = 6
 scale              = 1.0
-font_scale         = 1.0
+font_scale         = 1.03
 shadow             = false
 auto_hide          = false
 reserve_space      = true
-capsule            = false
+capsule            = true
+capsule_opacity    = 0.45
+capsule_thickness = 0.84
 
 start  = ["workspaces"]
-center = ["clipboard"]
-end    = ["keyboard_layout", "screenshot", "clock", "volume", "battery", "network", "tray", "notifications", "control-center"]
+center = []
+end    = ["keyboard_layout", "clipboard", "screenshot", "clock", "volume", "battery", "network", "tray", "notifications", "control-center"]
 
 # Only show workspaces that have windows.
 [widget.workspaces]
@@ -55,17 +76,33 @@ show_all_outputs  = false
 show_icons        = true
 show_labels       = true
 
-# Time by default; click opens the control-center calendar (date on click).
+# Day + time in the bar; click opens the control-center calendar.
 [widget.clock]
-format         = "{:%H:%M}"
+format         = "{:%d %H:%M}"
 tooltip_format = "{:%A, %B %d, %Y}"
 
-# Language indicator: short code + icon.
+# Language indicator: short code, no glyph.
 [widget.keyboard_layout]
 display                 = "short"
-show_glyph              = true
+show_glyph              = false
 show_label              = true
 hide_when_single_layout = false
+capsule                 = false
+
+[widget.clipboard]
+color = "primary"
+
+[widget.screenshot]
+color                 = "primary"
+custom_image_colorize = true
+
+[widget.control-center]
+capsule = false
+glyph   = "align-center"
+
+# Tray icons collapse into a drawer.
+[widget.tray]
+drawer = true
 
 # Bell is hidden when there are no unread notifications.
 [widget.notifications]
@@ -86,11 +123,105 @@ follow_focused_output = true   # toast on the monitor you're using
 lock_keys = false
 keyboard_layout = true
 
+# Palette is generated from the current wallpaper; the templates below
+# re-theme GTK / Qt / Hyprland apps to match it.
+[theme]
+builtin           = "Noctalia"
+community_palette = "Oxocarbon"
+mode              = "dark"
+source            = "wallpaper"
+wallpaper_scheme  = "muted"
+
+[theme.templates]
+builtin_ids  = ["gtk3", "hyprland", "qt"]
+community_ids = ["hyprtoolkit"]
+
 # Noctalia owns the wallpaper now; awww is no longer autostarted.
 [wallpaper]
-enabled   = true
-directory = "/home/me/__wallpapers"
-fill_mode = "crop"
+enabled               = true
+directory             = "/home/me/__wallpapers/"
+fill_mode             = "crop"
+transition_on_startup = true
+
+[wallpaper.default]
+path = "/home/me/__wallpapers/021.jpg"
+
+# Last wallpaper choice, kept so a reinstall restores the same look.
+[wallpaper.last]
+path = "/home/me/__wallpapers/021.jpg"
+
+[wallpaper.monitors.eDP-1]
+path = "/home/me/__wallpapers/021.jpg"
+
+[wallpaper.monitors.HDMI-A-1]
+path = "/home/me/__wallpapers/021.jpg"
+
+# Control center: full sidebar with quick toggles.
+[control_center]
+sidebar         = "full"
+sidebar_section = "full"
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "nightlight"
+
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[[control_center.shortcuts]]
+type = "notification"
+
+[nightlight]
+enabled           = true
+temperature_day   = 4600
+temperature_night = 4900
+
+# Weather location.
+[location]
+address = "Birsk, Russia"
+
+# Hot corner: top-left opens the window switcher.
+[hot_corners]
+enabled = true
+
+[hot_corners.top_left]
+action = "window_switcher"
+
+# Desktop widgets are disabled (the bar covers the essentials);
+# the clock widget placement is kept in case they are re-enabled.
+[desktop_widgets]
+enabled        = false
+schema_version = 2
+widget_order   = ["desktop-widget-0000000000000001"]
+
+[desktop_widgets.grid]
+cell_size      = 16
+major_interval = 4
+visible        = true
+
+[desktop_widgets.widget.desktop-widget-0000000000000001]
+box_height       = 96.0
+box_width        = 304.0
+cx               = 168.0
+cy               = 750.0
+output           = "eDP-1"
+placement_height = 864.0
+placement_width  = 1536.0
+rotation         = 0.0
+type             = "clock"
+
+[desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+background   = false
+center_text  = true
+clock_style  = "digital"
 
 # No Noctalia dock; the bar and desktop own that space.
 [dock]
@@ -99,6 +230,72 @@ enabled = false
 # hyprlock owns the lock screen.
 [lockscreen]
 enabled = false
+
+[lockscreen_widgets]
+enabled        = false
+schema_version = 2
+widget_order   = ["lockscreen-login-box@eDP-1", "lockscreen-login-box@HDMI-A-1"]
+
+[lockscreen_widgets.grid]
+cell_size      = 16
+major_interval = 4
+visible        = true
+
+[lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+box_height       = 196.0
+box_width        = 810.0
+cx               = 768.0
+cy               = 682.0
+output           = "eDP-1"
+placement_height = 864.0
+placement_width  = 1536.0
+rotation         = 0.0
+type             = "login_box"
+
+[lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+background_color     = "surface_container"
+background_opacity   = 0.88
+background_radius    = 12.0
+center_password_text = false
+input_opacity        = 1.0
+input_radius         = 6.0
+layout               = "regular"
+show_caps_lock       = true
+show_keyboard_layout = true
+show_login_button    = true
+show_media           = true
+show_password_reveal = true
+show_session_buttons = true
+show_unlock_hint     = true
+show_weather         = true
+
+[lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+box_height       = 196.0
+box_width        = 810.0
+cx               = 768.0
+cy               = 682.0
+output           = "HDMI-A-1"
+placement_height = 864.0
+placement_width  = 1536.0
+rotation         = 0.0
+type             = "login_box"
+
+[lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+background_color     = "surface_container"
+background_opacity   = 0.88
+background_radius    = 12.0
+center_password_text = false
+input_opacity        = 1.0
+input_radius         = 6.0
+layout               = "regular"
+show_caps_lock       = true
+show_keyboard_layout = true
+show_login_button    = true
+show_media           = true
+show_password_reveal = true
+show_session_buttons = true
+show_unlock_hint     = true
+show_weather         = true
 
 # hypridle owns idle; make sure Noctalia's idle behaviors stay off.
 [idle.behavior.lock]
