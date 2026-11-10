@@ -1,42 +1,19 @@
 /* =====================================================
- * Base / Legacy
+ * macOS-inspired palette
  * ===================================================== */
-@define-color fgColor            #9893a5;
-@define-color fgColorDark        #191724;
-@define-color bgColorLight       #9893a5;
-@define-color urgentColor        #eb6f92;
-@define-color iconColor          #ffffff;
+@define-color glassBg        rgba(18, 18, 20, 0.55);
+@define-color glassBorder    rgba(255, 255, 255, 0.10);
+@define-color hover          rgba(255, 255, 255, 0.12);
+@define-color tooltipBg      rgba(28, 28, 30, 0.94);
 
-/* =====================================================
- * Rose Pine based
- * ===================================================== */
-/* @define-color surfaceColorTransparent rgba(31, 29, 46, 0.4); */
-@define-color surfaceColorTransparent rgba(31, 29, 46, 0.0);
-@define-color overlayColor       #26233a;
-@define-color mutedColor         #6e6a86;
-@define-color subtleColor        #908caa;
+@define-color textPrimary    #f5f5f7;
+@define-color textSecondary  rgba(235, 235, 245, 0.68);
+@define-color textTertiary   rgba(235, 235, 245, 0.42);
 
-/* =====================================================
- * Main theme
- * ===================================================== */
-@define-color mainBgColor        #242438;
-@define-color mainBgColorGlass   rgba(36, 36, 56, 0.55);
-@define-color mainFgColor        #F5C2E7;
+@define-color accent         #0a84ff;
+@define-color accentPink     #ff375f;
+@define-color warning        #ffd60a;
+@define-color critical       #ff453a;
 
-/* =====================================================
- * Accents
- * ===================================================== */
-@define-color fgColor1           #A9A0D7;
-@define-color fgColor2           #F5C2E7;
-@define-color fgColor3           #EBA0AC;
-@define-color fgColor4           #CBA6F7;
-@define-color fgColor5           #89DCEB;
-@define-color fgColor6           #F9E2AF;
-
-@define-color tomatoColor        #f53c3c;
-@define-color silverBgColor      #323d49;
-
-/* =====================================================
- * Text
- * ===================================================== */
-@define-color text               #e8eaed;
+@define-color activePill     #f5f5f7;
+@define-color activeText     #1c1c1e;

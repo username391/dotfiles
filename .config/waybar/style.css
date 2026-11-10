@@ -1,179 +1,225 @@
 @import "colors.css";
 
 /* =====================================================
- * Global
+ * Global — macOS-like typography
  * ===================================================== */
 * {
     font-family: "JetBrainsMono Nerd Font Propo", sans-serif;
-	/* font-family: "FantasqueSansM Nerd Font Mono", "JetBrainsMono Nerd Font Propo", sans-serif; */
-
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 13px;
+    font-weight: 500;
     border: none;
-    border-radius: 10px;
+    border-radius: 0;
+    min-height: 0;
 }
 
-
-
 /* =====================================================
- * Waybar Window
+ * Bar — floating translucent capsule
  * ===================================================== */
 window#waybar {
-    background-color: @surfaceColorTransparent;
-    transition: background-color .5s;
+    background-color: @glassBg;
+    border-top: 1px solid @glassBorder;
+    border-radius: 0;
+    color: @textPrimary;
 }
 
 /* =====================================================
  * Shared module container
  * ===================================================== */
-#custom-exit,
+#window,
 #language,
-#pulseaudio,
-#battery,
 #clock,
+#battery,
+#pulseaudio,
 #network,
-#tray,
 #bluetooth,
+#tray,
+#custom-pomodoro,
 #custom-swaync {
-    padding: 0 13px;
-    margin: 5px;
-    background-color: @mainBgColorGlass;
-	color: @fgColor;
+    padding: 0 6px;
+    margin: 4px 0;
+    background: transparent;
+    color: @textSecondary;
+    border-radius: 10px;
+    transition: background-color 120ms ease, color 120ms ease;
 }
 
+/* Slightly larger icons without growing the bar */
+#battery,
+#pulseaudio,
+#network,
+#bluetooth,
+#custom-pomodoro,
+#custom-swaync {
+    font-size: 15px;
+}
 
-#language {
-    background-color: @surfaceColorTransparent;
+#language:hover,
+#clock:hover,
+#battery:hover,
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#custom-pomodoro:hover,
+#custom-swaync:hover {
+    background-color: @hover;
+    color: @textPrimary;
 }
 
 /* =====================================================
- * Workspaces
+ * Workspaces — Mission Control "Spaces"
  * ===================================================== */
 #workspaces {
-    padding: 0 13px;
-    margin: 5px;
-    background: @mainBgColorGlass;
+    padding: 0 4px;
+    margin: 4px 2px;
+    background: transparent;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    margin: 4px 3px;
-    color: @fgColor1;
-    transition: all .1s ease-in-out;
-}
-
-#workspaces button.active {
-    color: @mainBgColor;
-    background: @fgColor1;
+    min-width: 24px;
+    min-height: 24px;
+    padding: 0 6px;
+    margin: 0 1px;
+    background: transparent;
+    color: @textTertiary;
+    border-radius: 10px;
+    transition: background-color 120ms ease, color 120ms ease;
 }
 
 #workspaces button:hover {
-    color: @mainBgColor;
-    background-color: @fgColor3;
+    background-color: @hover;
+    color: @textPrimary;
+}
+
+#workspaces button.active {
+    background-color: @activePill;
+    color: @activeText;
+    font-weight: 600;
 }
 
 #workspaces button.urgent {
-    background: @urgentColor;
-    color: @fgColorDark;
+    background-color: @critical;
+    color: #ffffff;
 }
 
 /* =====================================================
- * Tooltip
+ * Active window
  * ===================================================== */
-tooltip {
-    background-color: @mainBgColor;
-    opacity: 0.9;
-    padding: 20px;
+#window {
+    color: @textPrimary;
+    font-weight: 600;
+    padding: 0 8px;
 }
 
-tooltip label {
-    color: @fgColor;
+#window.empty {
+    color: @textTertiary;
+    font-weight: 500;
+}
+
+/* =====================================================
+ * Pomodoro
+ * ===================================================== */
+#custom-pomodoro {
+    color: @accent;
+    font-weight: 600;
+}
+
+#custom-pomodoro.paused,
+#custom-pomodoro.stopped {
+    color: @textTertiary;
+}
+
+/* =====================================================
+ * Input language
+ * ===================================================== */
+#language {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: @textSecondary;
 }
 
 /* =====================================================
  * Clock
  * ===================================================== */
 #clock {
-    color: @fgColor2;
-}
-
-#clock:hover {
-    background-color: @fgColor2;
-    color: @mainBgColor;
+    color: @textPrimary;
+    font-weight: 600;
 }
 
 /* =====================================================
  * Battery
  * ===================================================== */
 #battery {
-    color: @fgColor3;
+    color: @textPrimary;
 }
 
-#battery:hover {
-    background-color: @fgColor3;
-    color: @mainBgColor;
+#battery.charging,
+#battery.plugged {
+    color: @accent;
+}
+
+#battery.warning:not(.charging) {
+    color: @warning;
 }
 
 #battery.critical:not(.charging) {
-    background-color: @urgentColor;
-    color: @fgColorDark;
-    animation: blink .5s linear infinite alternate;
+    color: @critical;
+    animation: blink 1s ease-in-out infinite alternate;
 }
 
 @keyframes blink {
+    from {
+        opacity: 1;
+    }
     to {
-        background-color: @bgColorLight;
-        color: @fgColorDark;
+        opacity: 0.45;
     }
 }
 
 /* =====================================================
- * Pulseaudio
+ * Volume
  * ===================================================== */
 #pulseaudio {
-    color: @fgColor4;
+    color: @textSecondary;
 }
 
-#pulseaudio:hover,
-#custom-swaync:hover {
-    background-color: @fgColor4;
-    color: @mainBgColor;
+#pulseaudio.muted {
+    color: @textTertiary;
 }
 
 /* =====================================================
  * Network
  * ===================================================== */
 #network {
-    color: @fgColor5;
+    color: @textSecondary;
 }
 
-#network:hover {
-    background-color: @fgColor5;
-    color: @mainBgColor;
-}
-
-#network.disconnected {
-    background-color: @urgentColor;
-    color: @surfaceColor;
+#network.disconnected,
+#network.disabled {
+    color: @critical;
 }
 
 /* =====================================================
  * Bluetooth
  * ===================================================== */
 #bluetooth {
-    color: @fgColor6;
+    color: @textSecondary;
 }
 
-#bluetooth:hover {
-    background-color: @fgColor6;
-    color: @mainBgColor;
+#bluetooth.connected {
+    color: @accent;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: @textTertiary;
 }
 
 /* =====================================================
  * Tray
  * ===================================================== */
 #tray {
-    color: @fgColor1;
+    padding: 0 6px;
+    margin: 4px 0;
 }
 
 #tray > .passive {
@@ -181,26 +227,39 @@ tooltip label {
 }
 
 #tray > .needs-attention {
-    background-color: @urgentColor;
     -gtk-icon-effect: highlight;
 }
 
 /* =====================================================
- * Custom modules
+ * Notification center
  * ===================================================== */
-#custom-exit {
-    color: @tomatoColor;
+#custom-swaync {
+    color: @textSecondary;
+    padding-right: 6px;
 }
 
-#custom-exit:hover {
-    background-color: @tomatoColor;
-    color: @mainBgColor;
+#custom-swaync.notification {
+    color: @accentPink;
 }
 
-#custom-pomodoro {
-    color: @fgColor2;
+#custom-swaync.dnd-notification,
+#custom-swaync.dnd-none {
+    color: @textTertiary;
 }
 
-#custom-pomodoro:hover {
-    color: @fgColor3;
+/* =====================================================
+ * Tooltip — dark macOS popover
+ * ===================================================== */
+tooltip {
+    background-color: @tooltipBg;
+    border: 1px solid @glassBorder;
+    border-radius: 12px;
+    padding: 10px 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+tooltip label {
+    color: @textPrimary;
+    font-size: 12px;
+    font-weight: 500;
 }
